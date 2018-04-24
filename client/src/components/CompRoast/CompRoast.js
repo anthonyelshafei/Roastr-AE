@@ -5,7 +5,7 @@ class CompRoast extends React.Component {
         return ( 
             
                 <div>
-                    this is a CompRoast
+                    <h2>this is a CompRoast</h2>
                 </div>
             
         )
