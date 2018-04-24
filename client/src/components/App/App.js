@@ -4,7 +4,12 @@ import Feed from "../Feed";
 class App extends React.Component {
   render() {
     return (
-      <Feed/>
+      <div>
+        <Nav />
+        <User />
+        <Feed />
+        <Social />
+      </div>
     )
   }
 }
