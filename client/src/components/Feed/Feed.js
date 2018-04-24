@@ -8,6 +8,7 @@ class Feed extends React.Component {
       <div className="feed">
         <h2>Feed</h2>
         <AddRoast/>
+        <CompRoast/>
       </div>
     )
   }
