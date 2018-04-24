@@ -1,5 +1,5 @@
 import axios from "axios";
-import filterParams from "./filterParams";
+// import filterParams from "./filterParams";
 
 export default {
     // Adds a user to the database

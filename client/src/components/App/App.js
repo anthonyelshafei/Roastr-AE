@@ -2,6 +2,7 @@ import React from "react";
 import Feed from "../Feed";
 
 class App extends React.Component {
+
   render() {
     return (
       <div>
@@ -12,6 +13,3 @@ class App extends React.Component {
       </div>
     )
   }
-}
-
-export default App;

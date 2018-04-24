@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Logo from "../../components/Logo";
-// import API from "../../utils/API";
+import API from "../../utils/API";
 
 class SignUp extends React.Component {
 
@@ -24,8 +24,17 @@ class SignUp extends React.Component {
        };
 
        handleFormSubmit = event => {
-           
-       }
+        event.preventDefault();
+
+        var userData = {
+          username: this.state.username,
+          password: this.state.password,
+          image: this.state.image
+        }
+
+        API.addUser(userData)
+
+       };
 
     render() {
         return (
@@ -36,7 +45,7 @@ class SignUp extends React.Component {
                     <input name="username" onChange={this.handleInputChange} value={this.state.username} type="text" placeholder="Username" required/>
                     <input name="password" onChange={this.handleInputChange} value={this.state.password} type="password" placeholder="Password" required/>
                     <input name="image" onChange={this.handleInputChange} value={this.state.image} type="text" placeholder="Image"/>
-                    <button id="signup-button" className="loginbutton" type="submit">Submit</button><br/>
+                    <button onClick={this.handleFormSubmit} id="signup-button" className="loginbutton" type="submit">Submit</button><br/>
                 </form>
                 </div>
             </Fragment>
