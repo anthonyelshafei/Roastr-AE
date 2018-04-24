@@ -1,6 +1,6 @@
 import React from "react";
 import AddRoast from "../AddRoast";
-import EditRoast from "../EditRoast";
+import CompRoast from "../CompRoast/CompRoast";
 
 class Feed extends React.Component {
   render() {
@@ -8,6 +8,7 @@ class Feed extends React.Component {
       <div className="feed">
         <h2>Feed</h2>
         <AddRoast/>
+        <CompRoast/>
       </div>
     )
   }
