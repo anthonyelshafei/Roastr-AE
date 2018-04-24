@@ -1,17 +1,25 @@
-import React, { Fragment } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-class Nav extends React.Component {
-  render() {
-    return (
-      <Fragment>
-      <nav>
-          <div className="nav-wrapper main grad1" id="navi">
-            <img src="images/logo-1.png" alt="" height="6%" width="6%"/>
-          </div>
-        </nav>
-      </Fragment>
-    )
-  }
-}
+const NavTabs = () => (
+  <ul className="nav nav-tabs">
+        
+        <li className="nav-item">
+        <Link to="/blog" className={window.location.pathname === "/feed" ? "nav-link active" : "nav-link"}><Logo/></Link>
+        </li>
+        
+        <li className="nav-item">
+        <Link to="/feed" className={window.location.pathname === "/feed" ? "nav-link active" : "nav-link"}> Feed</Link>
+        </li>
+        
+        <li className="nav-item">
+        <Link to= "/best" className={window.location.pathname === "/best" ? "nav-link active" : "nav-link"}>Best</Link>
+        </li>
+        
+        <li className="nav-item">
+        <Link to="/worst" className={window.location.pathname === "/worst" ? "nav-link active" : "nav-link"}>Worst</Link>
+        </li>
+  </ul>
+);
 
-export default Nav;
+export default NavTabs;
