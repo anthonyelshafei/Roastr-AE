@@ -1,23 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../Logo";
 
 const NavTabs = () => (
   <ul className="nav nav-tabs">
         
         <li className="nav-item">
-        <Link to="/Logo" className={window.location.pathname === "/feed" ? "nav-link active" : "nav-link"}><Logo/></Link>
+        <Link to="/main" className={window.location.pathname === "/feed" ? "nav-link active" : "nav-link"}><Logo/></Link>
         </li>
         
         <li className="nav-item">
-        <Link to="/Feed" className={window.location.pathname === "/feed" ? "nav-link active" : "nav-link"}> Feed</Link>
+        <Link to="/feed" className={window.location.pathname === "/feed" ? "nav-link active" : "nav-link"}> Feed</Link>
         </li>
         
         <li className="nav-item">
-        <Link to= "/Best" className={window.location.pathname === "/best" ? "nav-link active" : "nav-link"}>Best</Link>
+        <Link to= "/best" className={window.location.pathname === "/best" ? "nav-link active" : "nav-link"}>Best</Link>
         </li>
         
         <li className="nav-item">
-        <Link to="/Worst" className={window.location.pathname === "/worst" ? "nav-link active" : "nav-link"}>Worst</Link>
+        <Link to="/worst" className={window.location.pathname === "/worst" ? "nav-link active" : "nav-link"}>Worst</Link>
         </li>
   </ul>
 );

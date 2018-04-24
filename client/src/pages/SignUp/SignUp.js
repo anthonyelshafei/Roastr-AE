@@ -41,12 +41,11 @@ class SignUp extends React.Component {
             }
             else{
                 API.addUser(userData)
+                alert("User created!")
             }
-        })
+        });
         
-        
-
-       };
+        };
 
     render() {
         return (
