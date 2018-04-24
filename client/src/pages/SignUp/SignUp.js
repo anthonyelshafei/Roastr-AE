@@ -23,6 +23,8 @@ class SignUp extends React.Component {
         })
        };
 
+       
+
        handleFormSubmit = event => {
         event.preventDefault();
 
@@ -32,7 +34,17 @@ class SignUp extends React.Component {
           image: this.state.image
         }
 
-        API.addUser(userData)
+        API.getByName(this.state.username).then( res => {
+            if(res.data){
+                alert("Username is taken, please choose a different one.")
+                this.setState({username: ""})
+            }
+            else{
+                API.addUser(userData)
+            }
+        })
+        
+        
 
        };
 
