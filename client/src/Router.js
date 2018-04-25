@@ -12,7 +12,7 @@ const Router = () => (
        <Switch>
           <Route exact path="/" component={Login}/>
           <Route exact path="/signup" component={SignUp}/>
-          <Route path="/user/:userName" component={App}/>
+          <Route path="/user/:username" component={App}/>
           <Route path="/app" component={App}/>
           <Route component={NotFound}/>
         </Switch>

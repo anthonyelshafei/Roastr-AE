@@ -52,11 +52,11 @@ class SignUp extends React.Component {
             <Fragment>
                 <div className="container">
                 <Logo/>
-                <form className="form" id="signup">
+                <form className="form" id="signup" onSubmit={this.handleFormSubmit}>
                     <input name="username" onChange={this.handleInputChange} value={this.state.username} type="text" placeholder="Username" required/>
                     <input name="password" onChange={this.handleInputChange} value={this.state.password} type="password" placeholder="Password" required/>
                     <input name="image" onChange={this.handleInputChange} value={this.state.image} type="text" placeholder="Image"/>
-                    <button onClick={this.handleFormSubmit} id="signup-button" className="loginbutton" type="submit">Submit</button><br/>
+                    <button id="signup-button" className="loginbutton" type="submit">Submit</button><br/>
                 </form>
                 </div>
             </Fragment>
