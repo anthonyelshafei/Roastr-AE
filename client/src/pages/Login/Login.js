@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import Logo from "../../components/Logo";
+import axios from "axios";
 import API from "../../utils/API";
 
 
@@ -30,7 +31,6 @@ class Login extends React.Component {
             if(res.data){
                 if(res.data.password === this.state.password){
                     alert("Success!")
-                    
                 }
                 else{
                     alert("Password was incorrect, please try again.")

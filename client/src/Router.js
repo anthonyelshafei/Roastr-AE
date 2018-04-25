@@ -5,6 +5,7 @@ import Login from "../src/pages/Login";
 import SignUp from "../src/pages/SignUp";
 import App from "./components/App";
 import NotFound from "../src/pages/NotFound";
+import TestPage from "../src/pages/TestPage";
 
 const Router = () => (
   
@@ -12,6 +13,7 @@ const Router = () => (
        <Switch>
           <Route exact path="/" component={Login}/>
           <Route exact path="/signup" component={SignUp}/>
+          <Route exact path="/test" component={TestPage}/>
           <Route path="/user/:username" component={App}/>
           <Route path="/app" component={App}/>
           <Route component={NotFound}/>

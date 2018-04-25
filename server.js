@@ -13,9 +13,9 @@ app.use(session({secret: "its a secret",
 }));
 
 app.get("/api/sessioninfo", function(req, res){
-  var userInfo = req.session.user
-  res.json(userInfo)
+  res.json(req.session.user)
 })
+
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -14,13 +14,12 @@ module.exports = {
     db.User
       .findOne({username: req.params.username})
       .then(dbUser => {
-        res.json(dbUser);
         req.session.user = dbUser;
-        console.log(req.session.user)
+        
+        res.json(dbUser)
       })
       .catch(err => res.status(422).json(err));
   },
-
 
 
   findById: function(req, res) {
@@ -40,9 +39,9 @@ module.exports = {
     };
     db.User
       .create(user)
-      .then(dbUser => {res.json(dbUser)
+      .then(dbUser => {
         req.session.user = dbUser;
-        console.log(req.session.user)
+        res.json(dbUser)
       })
       .catch(err => res.status(422).json(err));
   },
@@ -60,3 +59,5 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   }
 };
+
+
