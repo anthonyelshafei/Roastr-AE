@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Logo from "../../components/Logo";
-// import API from "../../utils/API";
-import { Route } from 'react-router-dom';
+import API from "../../utils/API";
+
 
 class Login extends React.Component {
 
@@ -21,7 +21,25 @@ class Login extends React.Component {
     this.setState({
         [name]: value
     })
-   };
+    };
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+
+        API.getByName(this.state.username).then( res => {
+            if(res.data){
+                if(res.data.password === this.state.password){
+                    alert("Success!")
+                }
+                else{
+                    alert("Password was incorrect, please try again.")
+                }
+            }
+            else{
+              alert("User not found, please try again.")  
+            }
+        });
+    }
 
     render() {
         return (
@@ -31,13 +49,13 @@ class Login extends React.Component {
                     <form className="form" id="signup">
                         <input name="username" onChange={this.handleInputChange} type="text" placeholder="Username" value={this.state.username} required/>
                         <input name="password" onChange={this.handleInputChange} type="password" placeholder="Password" value={this.state.password} required/>
-                        <Route render={({ history }) => ( 
+                        
                         <button 
                         type="submit" 
                         id="login-button" 
                         className="loginbutton"
-                        onClick={() => {history.push('/users/' + this.state.username)}}
-                        >Login</button>)}/>
+                        onClick={this.handleFormSubmit}
+                        >Login</button>
                         <br/>
 
                     </form>

@@ -23,14 +23,10 @@ const NavTabs = () => (
       <li className="nav-item">
         <Link to="/Worst" className={window.location.pathname === "/worst" ? "nav-link active" : "nav-link"}>Worst</Link>
       </li>
+  
     </ul>
   </div>
 </nav>
-
-
-
-
-
 
 );
 
