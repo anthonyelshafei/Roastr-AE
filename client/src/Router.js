@@ -4,9 +4,7 @@ import Main from "../src/pages/Main"
 import Login from "../src/pages/Login";
 import SignUp from "../src/pages/SignUp";
 import NotFound from "../src/pages/NotFound";
-import Worst from "./components/Worst";
-import Best from "./components/Best";
-import Feed from "./components/Feed";
+
 
 const Router = () => (
   

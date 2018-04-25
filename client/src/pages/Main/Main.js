@@ -24,7 +24,7 @@ class Main extends React.Component {
             <User />
           </div>
 
-          <div className="col-md-7">
+          <div className="col-md-7 p-3">
        <Route exact path={`${this.props.match.url}`} component={Feed}/>   
        <Route exact path={`${this.props.match.url}/Worst`} component={Worst}/>
        <Route exact path={`${this.props.match.url}/Best`} component={Best}/>
