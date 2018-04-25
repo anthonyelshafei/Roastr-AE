@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../Logo";
 
 const NavTabs = () => (
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-warning sticky-top">
-  <a class="navbar-brand" href="">Roastr</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Roastr</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

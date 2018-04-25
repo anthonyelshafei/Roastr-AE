@@ -17,7 +17,7 @@ class Roast extends React.Component {
     const {roastr, recipient, roast, reply, roastScore, replyScore} = this.props.details;
 
     return (
-      <div className="completed-roast">
+      <li className="completed-roast">
         <h1>{recipient}</h1>
         <h2>{roast}</h2>
         <h2>{reply}</h2>
@@ -25,7 +25,7 @@ class Roast extends React.Component {
         <button>Vote</button>
         <p>{replyScore}</p>
         <button>Vote</button>
-      </div>
+      </li>
     );
   }
 }
