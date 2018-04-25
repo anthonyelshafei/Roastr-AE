@@ -4,8 +4,10 @@ import Roast from "../Roast";
 class Best extends React.Component {
   render() {
     return (
+      <div>
+      <h2>This is the best</h2>
       <table class="table">
-        <thead> <h2>This is the best</h2>
+        <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">First</th>
@@ -34,6 +36,7 @@ class Best extends React.Component {
           </tr>
         </tbody>
       </table>
+      </div>
     )
   }
 }
