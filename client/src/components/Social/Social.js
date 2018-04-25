@@ -6,7 +6,7 @@ class Social extends React.Component {
   render() {
     return (
       <div className="social">
-        <h2>Feed</h2>
+        <h2>This is the Social component</h2>
         <EditRoast/>
         <AddRoast/>
       </div>
