@@ -1,6 +1,6 @@
 import React from "react";
 import AddRoast from "../AddRoast";
-import CompRoast from "../CompRoast/CompRoast";
+// import EditRoast from "../EditRoast";
 
 class Feed extends React.Component {
   render() {

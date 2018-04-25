@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../Logo"
+import Logo from "../Logo";
 
 const NavTabs = () => (
-
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Roastr</a>
@@ -24,14 +23,10 @@ const NavTabs = () => (
       <li className="nav-item">
         <Link to="/Worst" className={window.location.pathname === "/worst" ? "nav-link active" : "nav-link"}>Worst</Link>
       </li>
+  
     </ul>
   </div>
 </nav>
-
-
-
-
-
 
 );
 
