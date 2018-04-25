@@ -9,10 +9,25 @@ class Main extends React.Component {
   render() {
     return (
       <div>
+
         <Nav />
-        <User />
-        <Feed />
-        <Social />
+
+          <div className="row">
+
+            <div className="col-md-2">
+              <User />
+            </div>
+
+            <div className="col-md-7">
+              <Feed />
+            </div>
+
+            <div className="col-md-3">
+              <Social />
+            </div>
+
+          </div>
+
       </div>
     )
   }

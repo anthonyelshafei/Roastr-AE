@@ -5,13 +5,7 @@ class EditRoast extends React.Component {
         return ( 
             <Fragment>
                 <div>
-                    <input type="text"/>
-                    <input type="text"/>
-                    <input type="text"/>
-                    <input type="text"/> 
-                    <input type="text"/>
-                    <input type="text"/>
-                    <button>Delete Roast</button>
+                    <h2>This is edit Roast</h2>
                 </div>
             </Fragment>
         )
