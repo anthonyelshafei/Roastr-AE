@@ -2,14 +2,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const roastSchema = new Schema({
-  _id: { type: Schema.Types.ObjectId, required: true },
+  
   roastr: { type: String, required: true },
   recipient: { type: String, required: true },
   roast: { type: String, required: true },
-  reply: { type: String, required: true, default: "" },
-  roastScore: { type: Number, required: true, default: 0},
-  replyScore: { type: Number, required: true, default: 0}
-}, { _id: false });
+  reply: { type: String, default: "" },
+  roastScore: { type: Number, default: 0},
+  replyScore: { type: Number, default: 0}
+});
 
 const Roast = mongoose.model("Roast", roastSchema);
 

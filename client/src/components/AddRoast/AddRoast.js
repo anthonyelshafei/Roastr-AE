@@ -1,27 +1,65 @@
 import React from "react";
+import API from "../../utils/API";
+import axios from "axios";
 
-class AddRoast extends React.Component {   
+class AddRoast extends React.Component { 
+  
+  state = {
+    roasters: [],
+    userInfo: {},
+    recipient: "",
+    roast: ""
+  }
+
+  componentDidMount(){
+    //grabs all roasters
+    API.getUsers().then(res => {
+        console.log(res.data)
+        this.setState({roasters: res.data})
+    })
+
+    axios.get("/api/sessioninfo").then(res => {
+      this.setState({userInfo: res.data})
+  })
+};
+
+handleInputChange = event => {
+  let value = event.target.value;
+  const name = event.target.name;
+  this.setState({ [name]: value })
+};
+
+handleFormSubmit = event => {
+  event.preventDefault();
+  var roastData = {
+      roastr: this.state.userInfo.username,
+      recipient: this.state.recipient,
+      roast: this.state.roast
+  }
+  API.addRoast(roastData).then(
+      this.setState({recipient: "", roast: ""})
+  )
+}
 
 //<form onSubmit={this.createRoast}>
   render() {
     return (
-        <form>
+        <form onSubmit={this.handleFormSubmit}>
             <div className="form-group">
               <label for="exampleFormControlSelect1">Example select</label>
-              <select className="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+              <select name="recipient" className="form-control" id="exampleFormControlSelect1" onChange={this.handleInputChange} value={this.state.recipient}>
+                <option default>Select a Roaster...</option>
+                {this.state.roasters.map(item => 
+                <option>{item.username}</option>
+                )}
               </select>
             </div>
             <br/>
             <div className="form-group">
-              <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea name="roast" className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write your roast here..." onChange={this.handleInputChange} value={this.state.roast}>{this.state.roast}</textarea>
             </div>
             <br/>
-            <button type="button" class="btn">Roast</button>
+            <button type="submit" class="btn">Roast</button>
         </form>
     );
   }
