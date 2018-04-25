@@ -6,7 +6,7 @@ class Feed extends React.Component {
   render() {
     return (
       <div className="feed">
-        <h2>Feed</h2>
+        <h2>This is the feed</h2>
         <AddRoast/>
         <CompRoast/>
       </div>

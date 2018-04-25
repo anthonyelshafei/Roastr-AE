@@ -4,7 +4,6 @@ class Roast extends React.Component {
   
   static propTypes = {
     details: PropTypes.shape({
-      roastr: PropTypes.string,
       recipient: PropTypes.string,
       roast: PropTypes.string,
       reply: PropTypes.string,
@@ -19,7 +18,6 @@ class Roast extends React.Component {
 
     return (
       <li className="completed-roast">
-        <h1>{roastr}</h1>
         <h1>{recipient}</h1>
         <h2>{roast}</h2>
         <h2>{reply}</h2>

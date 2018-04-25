@@ -6,14 +6,16 @@
 
 // class App extends React.Component {
 
-//   render() {
-//     return (
-//       <div>
-//         <Nav />
-//         <User />
-//         <Feed />
-//         <Social />
-//       </div>
-//     )
-//   }
-// }
+  render() {
+    return (
+      <div>
+        <Nav />
+        <User />
+        <Feed />
+        <Social />
+      </div>
+    )
+  }
+}
+
+
