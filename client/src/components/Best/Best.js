@@ -5,7 +5,7 @@ class Best extends React.Component {
   render() {
     return (
       <table class="table">
-        <thead>
+        <thead> <h2>This is the best</h2>
           <tr>
             <th scope="col">#</th>
             <th scope="col">First</th>

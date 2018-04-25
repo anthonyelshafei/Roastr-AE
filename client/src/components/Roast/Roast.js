@@ -2,15 +2,15 @@ import React from "react";
 
 class Roast extends React.Component {
   
-  static propTypes = {
-    details: PropTypes.shape({
-      recipient: PropTypes.string,
-      roast: PropTypes.string,
-      reply: PropTypes.string,
-      roastScore: PropTypes.number,
-      replyScore: PropTypes.number
-    })
-  }
+  // static propTypes = {
+  //   details: PropTypes.shape({
+  //     recipient: PropTypes.string,
+  //     roast: PropTypes.string,
+  //     reply: PropTypes.string,
+  //     roastScore: PropTypes.number,
+  //     replyScore: PropTypes.number
+  //   })
+  // }
 
   render() {
     
