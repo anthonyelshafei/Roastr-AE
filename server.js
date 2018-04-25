@@ -1,9 +1,21 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+var session = require('express-session');
 const routes = require("./routes");
+
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+app.use(session({secret: "its a secret",
+                 saveUninitialized: true,
+                 resave: false
+}));
+
+app.get("/api/sessioninfo", function(req, res){
+  res.json(req.session.user)
+})
+
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,3 +42,4 @@ mongoose.connect(
 app.listen(PORT, () =>
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
 );
+

@@ -13,9 +13,14 @@ module.exports = {
   findByName: function(req, res) {
     db.User
       .findOne({username: req.params.username})
-      .then(dbUser => res.json(dbUser))
+      .then(dbUser => {
+        req.session.user = dbUser;
+        
+        res.json(dbUser)
+      })
       .catch(err => res.status(422).json(err));
   },
+
 
   findById: function(req, res) {
     db.User
@@ -34,7 +39,10 @@ module.exports = {
     };
     db.User
       .create(user)
-      .then(dbUser => res.json(dbUser))
+      .then(dbUser => {
+        req.session.user = dbUser;
+        res.json(dbUser)
+      })
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
@@ -51,3 +59,5 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   }
 };
+
+

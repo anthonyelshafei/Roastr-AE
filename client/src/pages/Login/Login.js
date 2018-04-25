@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import Logo from "../../components/Logo";
+import axios from "axios";
 import API from "../../utils/API";
 
 
@@ -33,10 +34,12 @@ class Login extends React.Component {
                 }
                 else{
                     alert("Password was incorrect, please try again.")
+                    this.setState({password: ""})
                 }
             }
             else{
-              alert("User not found, please try again.")  
+              alert("User not found, please try again.")
+              this.setState({username: ""})
             }
         });
     }
@@ -46,7 +49,7 @@ class Login extends React.Component {
             <Fragment>
                 <div className="container">
                     <Logo/>
-                    <form className="form" id="signup">
+                    <form className="form" id="signup" onSubmit={this.handleFormSubmit}>
                         <input name="username" onChange={this.handleInputChange} type="text" placeholder="Username" value={this.state.username} required/>
                         <input name="password" onChange={this.handleInputChange} type="password" placeholder="Password" value={this.state.password} required/>
                         
@@ -54,7 +57,6 @@ class Login extends React.Component {
                         type="submit" 
                         id="login-button" 
                         className="loginbutton"
-                        onClick={this.handleFormSubmit}
                         >Login</button>
                         <br/>
 
