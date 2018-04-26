@@ -1,9 +1,9 @@
 import React from 'react';
 import Userimage from "../Userimage";
 
-const style = {
-    height: 60,
-    width: 60,
+const imgStyle = {
+    height: 50,
+    width: 50,
   };
 
 class CompRoast extends React.Component {
@@ -13,7 +13,7 @@ class CompRoast extends React.Component {
             <div className="card text-center">
                 <div className="card-header row text-center justify-content-between">
                     
-                    <div style={style} className="d-flex ">
+                    <div style={imgStyle} className="d-flex ml-auto mr-5">
                         <Userimage />
                     </div>
                     
@@ -21,7 +21,7 @@ class CompRoast extends React.Component {
                         Player 1 @ Player 2
                     </div>
                     
-                    <div style={style} className="d-flex">
+                    <div style={imgStyle} className="d-flex mr-auto ml-5">
                         <Userimage />
                     </div>
 
