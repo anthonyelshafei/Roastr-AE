@@ -19,7 +19,7 @@ class Main extends React.Component {
       <div>
 
         <Nav />
-        <div className="row p-3">
+        <div className="row px-3 pt-5">
         
           <div className="col-10 col-xs-8 col-sm-8 offset-sm-2 col-md-2 col-lg-2 col-xl-2 mx-auto">
             <User />
@@ -36,6 +36,7 @@ class Main extends React.Component {
           </div>
 
         </div>
+        
       </div>
     )
   }
