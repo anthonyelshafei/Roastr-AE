@@ -10,13 +10,13 @@ const imgStyle = {
 const NavTabs = () => (
 
 
-<nav className="navbar navbar-expand-lg navbar-light sticky-top p-0">
+<nav className="navbar navbar-expand-lg sticky-top p-0">
   <a className="navbar-brand text-center ml-3" href=""><img style={imgStyle} src="https://i.imgur.com/9t9gT3Y.png" alt="Roastr"/></a>
   <button className="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
+    Menu
   </button>
   <div className="collapse navbar-collapse" id="navbarNav">
-    <ul className="navbar-nav">
+    <ul className="navbar-nav text-center">
             
       <li className="nav-item px-2">
         <Link to="/main/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>Feed</Link>

@@ -85,8 +85,7 @@ p {
 .navbar {
 	background: #2d3035;
 	border-bottom: 2px solid #f44d2f;
-	color: #f44d2f;
-	background-blend-mode: lighten !important;
+	color: #f44d2f !important;
 }
 
 .form-control {
