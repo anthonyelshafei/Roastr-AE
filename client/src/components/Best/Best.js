@@ -6,7 +6,7 @@ class Best extends React.Component {
     return (
       <div>
       <h2>This is the best</h2>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>

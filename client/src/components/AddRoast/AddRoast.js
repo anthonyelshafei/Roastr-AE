@@ -21,7 +21,7 @@ class AddRoast extends React.Component {
               <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <br/>
-            <button type="button" class="btn">Roast</button>
+            <button type="button" className="btn">Roast</button>
         </form>
     );
   }
