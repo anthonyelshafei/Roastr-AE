@@ -5,8 +5,9 @@ import Pending from "../Pending";
 class Social extends React.Component {
   render() {
     return (
+    <div>
+      <h2>Social</h2>
       <div id="accordion">
-        
         <div className="card">
           <div className="card-header" id="headingOne">
             <h5 className="mb-0">
@@ -40,7 +41,6 @@ class Social extends React.Component {
               <Pending />
               <Pending />
               <Pending />
-
             </div>
           </div>
         </div>
@@ -60,6 +60,7 @@ class Social extends React.Component {
           </div>
         </div>
       </div>
+    </div>
     )
   }
 }

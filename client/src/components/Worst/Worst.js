@@ -4,7 +4,7 @@ import Roast from "../Roast";
 class Worst extends React.Component {
   render() {
     return (
-      <div>
+      <div className="px-3">
       <h2>This is the worst</h2>
       <table className="table">
         <thead>

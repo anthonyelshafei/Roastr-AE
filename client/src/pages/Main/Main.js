@@ -19,20 +19,22 @@ class Main extends React.Component {
       <div>
 
         <Nav />
-        <div className="row">
-          <div className="col-md-2">
+        <div className="row p-3">
+        
+          <div className="col-10 col-xs-8 col-sm-8 offset-sm-2 col-md-3 col-lg-2 mx-auto">
             <User />
           </div>
 
-          <div className="col-md-7 px-auto">
-       <Route exact path={`${this.props.match.url}`} component={Feed}/>   
-       <Route exact path={`${this.props.match.url}/Worst`} component={Worst}/>
-       <Route exact path={`${this.props.match.url}/Best`} component={Best}/>
+          <div className="col-sm-12 col-md-9 col-lg-7">
+            <Route exact path={`${this.props.match.url}`} component={Feed}/>   
+            <Route exact path={`${this.props.match.url}/Worst`} component={Worst}/>
+            <Route exact path={`${this.props.match.url}/Best`} component={Best}/>
           </div>
 
-          <div className="col-md-3">
+          <div className="col-sm-12 col-md-9 offset-md-3 col-lg-3 offset-lg-0">
             <Social />
           </div>
+
         </div>
       </div>
     )

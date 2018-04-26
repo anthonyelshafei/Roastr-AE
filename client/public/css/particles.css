@@ -4,10 +4,9 @@
 
 canvas {
 	display: block;
-	vertical-align: bottom;
 } /* ---- particles.js container ---- */
 #particles-js {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	z-index: -100000;
 	width: 100%;
