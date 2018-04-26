@@ -10,7 +10,7 @@ class CompRoast extends React.Component {
     render() {
         return ( 
             
-            <div className="card text-center">
+            <div className="card text-center mb-3">
                 <div className="card-header row text-center justify-content-between">
                     
                     <div style={imgStyle} className="d-flex ml-auto mr-3">

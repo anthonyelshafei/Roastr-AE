@@ -1,5 +1,4 @@
 import React from "react";
-import Roast from "../Roast";
 
 class Worst extends React.Component {
   render() {
