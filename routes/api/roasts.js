@@ -18,10 +18,10 @@ router
   .route("/users/:roastr")
   .get(roastController.findYourRoasts);
 
-// Matches with "/api/roasts/users/pending/:roastr"
+// Matches with "/api/roasts/users/pending/:name"
 router
-  .route("/users/pending/:roastr")
-  .get(roastController.findYourPendings);
+  .route("/users/pending/:name")
+  .get(roastController.getPendings);
 
   
 module.exports = router;

@@ -21,17 +21,20 @@ module.exports = {
       .then(dbRoast => res.json(dbRoast))
       .catch(err => res.status(422).json(err));
   },
-  findYourPendings: function(req, res) {
+  getPendings: function(req, res) {
     db.Roast
-      .findYourPendings({roastr: req.params.roastr, reply: ""})
+      .find({recipientName: req.params.name, reply: ""})
       .then(dbRoast => res.json(dbRoast))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
     const roast = {
-      _id: req.body._id,
-      roastr: req.body.roastr,
-      recipient: req.body.recipient,
+      roastrName: req.body.roastrName,
+      roastrImage: req.body.roastrImage,
+      roastrScore: req.body.roastrScore,
+      recipientName: req.body.recipientName,
+      recipientImage: req.body.recipientImage,
+      recipientScore: req.body.recipientScore,
       roast: req.body.roast,
       reply: req.body.reply,
       roastScore: 0,

@@ -19,6 +19,9 @@ export default {
         return axios.get("/api/users/user/" + name)
     },
 
+    findRecipient: function(name) {
+        return axios.get("/api/users/recipient/" + name)
+    },
     // Gets all users
     getUsers: function() {
         return axios.get("/api/users");
@@ -38,5 +41,8 @@ export default {
     // Gets all roasts
     getRoasts: function() {
         return axios.get("/api/roasts");
+    },
+    getPendings: function(name) {
+        return axios.get("/api/roasts/users/pending/" + name)
     }
 };

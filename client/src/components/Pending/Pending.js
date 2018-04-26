@@ -23,7 +23,7 @@ const Pending = props => (
                     </button>
                 </div>
                 <div class="modal-body">
-                    {this.props.roast}
+                    {props.roast}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -35,20 +35,20 @@ const Pending = props => (
 
         <span className="align-middle text-right">
             <small>
-            To: {this.props.recipient}<br/>
-            Date: {this.props.date}
+            {/* From: {props.roastrName}<br/>
+            Date: {props.date} */}
             </small>
         </span>
 
         <span className="my-auto text-left">
-            <span><small>{this.props.username}</small> </span>
-            <span className="badge badge-pill badge-danger">{this.props.score}</span><br/>
-            <small>{this.props.date}</small>
+            <span><small>From: {props.roastrName}</small> </span>
+            <span className="badge badge-pill badge-danger">{props.roastrScore}</span><br/>
+            <small>{props.date}</small>
         </span>
         
         <div style={imgStyle} className="my-auto mr-1">
           <Userimage
-          image={this.props.image}
+          image={props.roastrImage}
           />
         </div>
        

@@ -7,7 +7,7 @@ class AddRoast extends React.Component {
   state = {
     roasters: [],
     userInfo: {},
-    recipient: "",
+    recipientName: "",
     roast: ""
   }
 
@@ -18,31 +18,46 @@ class AddRoast extends React.Component {
         this.setState({roasters: res.data})
     })
 
-    axios.get("/api/sessioninfo").then(res => {
-      this.setState({userInfo: res.data})
+    axios.get("/api/sessioninfo").then(response => {
+      this.setState({userInfo: response.data})
   })
 };
+
+
 
 handleInputChange = event => {
   let value = event.target.value;
   const name = event.target.name;
   this.setState({ [name]: value })
+  console.log(name, value)
 };
 
 handleFormSubmit = event => {
   event.preventDefault();
-  var roastData = {
-      roastr: this.state.userInfo.username,
-      recipient: this.state.recipient,
-      roast: this.state.roast
-  }
-  if(roastData.roastr === roastData.recipient){
+
+  if(this.state.userInfo.username === this.state.recipientName){
     alert("You can't roast yourself, ya dingus!")
   }
   else{
-  API.addRoast(roastData).then(
-      this.setState({recipient: "", roast: ""})
-  )
+    API.findRecipient(this.state.recipientName).then(res => {
+      
+      var recipientInfo = res.data
+      
+      var roastData = {
+        roastrName: this.state.userInfo.username,
+        roastrImage: this.state.userInfo.image,
+        roastrScore: this.state.userInfo.score,
+        recipientName: recipientInfo.username,
+        recipientImage: recipientInfo.image,
+        recipientScore: recipientInfo.score,
+        roast: this.state.roast
+    }
+      console.log(roastData)
+      API.addRoast(roastData).then(
+      this.setState({recipientName: "", roast: ""})
+    )
+  })
+  
   }
 }
 
@@ -51,7 +66,7 @@ handleFormSubmit = event => {
     return (
         <form onSubmit={this.handleFormSubmit}>
             <div className="form-group">
-              <select name="recipient" className="form-control" id="userSearch" onChange={this.handleInputChange} value={this.state.recipient}>
+              <select name="recipientName" className="form-control" id="userSearch" onChange={this.handleInputChange} value={this.state.recipientName}>
                 <option default>Select a Roaster...</option>
                 {this.state.roasters.map(item => 
                 <option key={item._id}>{item.username}</option>
