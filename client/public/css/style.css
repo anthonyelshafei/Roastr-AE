@@ -83,8 +83,9 @@ p {
 }
 
 .navbar {
-	background: transparent;
-	border: none;
+	background: #2d3035;
+	border-bottom: 2px solid #f44d2f;
+	color: #f44d2f !important;
 }
 
 .form-control {
@@ -287,3 +288,7 @@ table a:hover {
 	max-height: 1000px;
 }
 
+.navbar-toggler{
+	background: #F44D2F;
+	color: gold;
+}

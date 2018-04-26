@@ -7,7 +7,7 @@ class Social extends React.Component {
     return (
     <div className="px-3">
       <h2>Social</h2>
-      <div id="accordion">
+      <div id="accordion bg-dark">
         <div className="card">
           <div className="card-header" id="headingOne">
             <h5 className="mb-0">
