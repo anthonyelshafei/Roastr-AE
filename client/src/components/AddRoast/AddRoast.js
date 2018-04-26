@@ -7,8 +7,7 @@ class AddRoast extends React.Component {
     return (
         <form>
             <div className="form-group">
-              <label for="exampleFormControlSelect1">Example select</label>
-              <select className="form-control" id="exampleFormControlSelect1">
+              <select className="form-control" id="userSearch">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -16,12 +15,12 @@ class AddRoast extends React.Component {
                 <option>5</option>
               </select>
             </div>
-            <br/>
+            
             <div className="form-group">
-              <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea className="form-control" id="userSearch" rows="3"></textarea>
             </div>
-            <br/>
-            <button type="button" className="btn">Roast</button>
+
+            <button type="button" className="btn col-12">Roast</button>
         </form>
     );
   }
