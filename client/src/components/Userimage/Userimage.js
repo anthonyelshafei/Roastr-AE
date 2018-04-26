@@ -2,7 +2,8 @@ import React from "react";
 
 const imgStyle = {
     clipPath: 'circle(50% at 50% 50%)',
-    width: '100%',    
+    width: '100%',  
+    height: '100%',  
   };
 
 
