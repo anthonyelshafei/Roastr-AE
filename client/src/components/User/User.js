@@ -18,14 +18,15 @@ class User extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-         <div class="sidebar-header p-4">
+         <div className="sidebar-header">
           <Userimage
           image={this.state.userInfo.image}
           />
+          <h2 class = "text-center">{this.state.userInfo.username}</h2>
           </div>
-        <h2 class = "text-center">{this.state.userInfo.username}</h2>
-        <div class= "pl-3">Points <span class="badge badge-warning">{this.state.userInfo.score}</span></div>
-        <div class= "pl-3">Rank <span class="badge badge-warning">*PENDING*</span></div>
+        <div>Points <span className="badge badge-pill badge-warning float-right">{this.state.userInfo.score}</span></div>
+        <div>Rank <span className="badge badge-pill badge-warning float-right">*PENDING*</span></div>
+        <br/>
       </div>
     )
   }

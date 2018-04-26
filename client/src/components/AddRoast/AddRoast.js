@@ -46,21 +46,19 @@ handleFormSubmit = event => {
     return (
         <form onSubmit={this.handleFormSubmit}>
             <div className="form-group">
-              <label for="exampleFormControlSelect1">Example select</label>
-              <select name="recipient" className="form-control" id="exampleFormControlSelect1" onChange={this.handleInputChange} value={this.state.recipient}>
+              <select name="recipient" className="form-control" id="userSearch" onChange={this.handleInputChange} value={this.state.recipient}>
                 <option default>Select a Roaster...</option>
                 {this.state.roasters.map(item => 
                 <option>{item.username}</option>
                 )}
               </select>
             </div>
-            <br/>
+            
             <div className="form-group">
-              <textarea name="roast" className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write your roast here..." onChange={this.handleInputChange} value={this.state.roast}>{this.state.roast}</textarea>
-            </div>
-            <br/>
-            <button type="submit" class="btn">Roast</button>
-        </form>
+              <textarea name="roast" className="form-control" id="userSearch" rows="3" placeholder="Write your roast here..." onChange={this.handleInputChange} value={this.state.roast}>{this.state.roast}</textarea>
+              </div>
+            <button type="button" className="btn col-12">Roast</button>
+          </form>
     );
   }
 }

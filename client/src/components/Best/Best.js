@@ -4,9 +4,9 @@ import Roast from "../Roast";
 class Best extends React.Component {
   render() {
     return (
-      <div>
+      <div className="px-3">
       <h2>This is the best</h2>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>

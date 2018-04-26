@@ -1,8 +1,8 @@
 import React from "react";
-import "./Userimage.css"
+
 
 const Userimage = props => (
-    <img src={props.image} alt="profile pic"/>
+    <img src={props.image} className="img-fluid rounded-circle" alt="profile pic"/>
 
 );
 
