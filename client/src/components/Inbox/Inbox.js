@@ -52,7 +52,7 @@ class Inbox extends React.Component {
         </span>
         
         <button type="button" class="btn btn-primary mt-1" data-toggle="modal" data-target="#pendingModal">Reply</button>
-        <button type="button" class="btn btn-primary mt-1" data-toggle="modal" data-target="#pendingModal">X</button>
+        <button type="button" class="btn btn-primary mt-1">X</button>
 
        
       </div>
