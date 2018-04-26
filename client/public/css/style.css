@@ -269,3 +269,8 @@ table a:hover {
 .btn-danger{
 	background:#F44D2F;
 }
+
+.card-body{
+	max-height: 530px;
+	overflow-y: scroll;
+}

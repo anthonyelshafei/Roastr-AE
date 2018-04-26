@@ -1,6 +1,6 @@
 import React from "react";
 import AddRoast from "../AddRoast";
-import EditRoast from "../EditRoast";
+import Pending from "../Pending";
 
 class Social extends React.Component {
   render() {
@@ -15,7 +15,7 @@ class Social extends React.Component {
               </button>
             </h5>
           </div>
-          <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div className="card-body">
               inbox
             </div>
@@ -32,7 +32,15 @@ class Social extends React.Component {
           </div>
           <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
             <div className="card-body">
-              pending
+              <Pending />
+              <Pending />
+              <Pending />
+              <Pending />
+              <Pending />
+              <Pending />
+              <Pending />
+              <Pending />
+
             </div>
           </div>
         </div>
@@ -45,7 +53,7 @@ class Social extends React.Component {
               </button>
             </h5>
           </div>
-          <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div id="collapseThree" className="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
             <div className="card-body">
               chat
             </div>
