@@ -13,4 +13,9 @@ router
   .put(roastController.update)
   .delete(roastController.remove);
 
+// Matches with "/api/roasts/users/:roastr"
+router
+  .route("/users/:roastr")
+  .get(roastController.findByName);
+
 module.exports = router;
