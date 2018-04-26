@@ -2,8 +2,8 @@ import React from 'react';
 import Userimage from "../Userimage";
 
 const imgStyle = {
-    height: 50,
-    width: 50,
+    maxHeight: 50,
+    maxWidth: 50,
   };
 
 class CompRoast extends React.Component {
