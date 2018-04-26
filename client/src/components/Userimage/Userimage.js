@@ -1,8 +1,12 @@
 import React from "react";
 
+const imgStyle = {
+    clipPath: 'circle(50% at 50% 50%)',
+    width: '100%',    
+  };
 
 const Userimage = props => (
-    <img src={props.image} className="img-fluid rounded-circle" alt="profile pic"/>
+    <img style={imgStyle} src={props.image} alt=""/>
 
 );
 
