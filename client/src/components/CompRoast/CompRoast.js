@@ -13,7 +13,7 @@ class CompRoast extends React.Component {
             <div className="card text-center">
                 <div className="card-header row text-center justify-content-between">
                     
-                    <div style={imgStyle} className="d-flex ml-auto mr-5">
+                    <div style={imgStyle} className="d-flex ml-auto mr-3">
                         <Userimage />
                     </div>
                     
@@ -21,7 +21,7 @@ class CompRoast extends React.Component {
                         Player 1 @ Player 2
                     </div>
                     
-                    <div style={imgStyle} className="d-flex mr-auto ml-5">
+                    <div style={imgStyle} className="d-flex mr-auto ml-3">
                         <Userimage />
                     </div>
 
