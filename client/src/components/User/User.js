@@ -10,7 +10,7 @@ class User extends React.Component {
 
   componentDidMount(){
 
-    axios.get("/api/sessioninfo").then(res => {
+axios.get("/api/sessioninfo").then(res => {
       this.setState({userInfo: res.data})
   })
 };

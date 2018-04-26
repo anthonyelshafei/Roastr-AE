@@ -32,7 +32,9 @@ const NavTabs = () => (
 
     </ul>
 
-      <span className="btn col-12 col-xs-12 col-lg-1 py-2 mr-3 ml-auto">GTFO</span>
+      <span className="btn col-12 col-xs-12 col-lg-1 py-2 mr-3 ml-auto">
+      <Link to="/">GTFO</Link>
+      </span>
     
   </div>
 </nav>

@@ -30,7 +30,7 @@ class Login extends React.Component {
         API.getByName(this.state.username).then( res => {
             if(res.data){
                 if(res.data.password === this.state.password){
-                    alert("Success!")
+                    window.location.href = '/main';
                 }
                 else{
                     alert("Password was incorrect, please try again.")
