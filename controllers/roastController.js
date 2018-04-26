@@ -15,9 +15,15 @@ module.exports = {
       .then(dbRoast => res.json(dbRoast))
       .catch(err => res.status(422).json(err));
   },
-  findByName: function(req, res) {
+  findYourRoasts: function(req, res) {
     db.Roast
-      .findByName({roastr: req.params.roastr})
+      .findYourRoasts({roastr: req.params.roastr})
+      .then(dbRoast => res.json(dbRoast))
+      .catch(err => res.status(422).json(err));
+  },
+  findYourPendings: function(req, res) {
+    db.Roast
+      .findYourPendings({roastr: req.params.roastr, reply: ""})
       .then(dbRoast => res.json(dbRoast))
       .catch(err => res.status(422).json(err));
   },

@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import Feed from "../../components/Feed";
 import Nav from "../../components/Nav";
 import User from "../../components/User";
@@ -8,11 +9,24 @@ import Worst from "../../components/Worst";
 import Best from "../../components/Best";
 
 
+
 class Main extends React.Component {
 
   state = {
-    center: "feed"
+    center: "feed",
+    userInfo: {}
   }
+
+  componentDidMount(){
+
+    axios.get("/api/sessioninfo").then(res => {
+          this.setState({userInfo: res.data})
+          console.log(res.data)
+          if(res.data === ""){
+            window.location.href = '/'
+          }
+      })
+    };
 
   render() {
     return (
