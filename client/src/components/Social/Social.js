@@ -5,7 +5,7 @@ import Pending from "../Pending";
 class Social extends React.Component {
   render() {
     return (
-    <div>
+    <div className="px-3">
       <h2>Social</h2>
       <div id="accordion">
         <div className="card">
@@ -55,7 +55,7 @@ class Social extends React.Component {
           </div>
           <div id="collapseThree" className="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
             <div className="card-body">
-              chat
+              Chat
             </div>
           </div>
         </div>

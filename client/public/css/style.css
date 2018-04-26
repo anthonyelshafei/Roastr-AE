@@ -281,3 +281,9 @@ table a:hover {
 	padding-left: 0;
 	padding-right: 0;
 }
+
+#feed{
+	overflow-y: scroll;
+	max-height: 1000px;
+}
+
