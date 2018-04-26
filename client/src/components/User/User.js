@@ -9,8 +9,8 @@ class User extends React.Component {
           <Userimage/>
           </div>
         <h2 class = "text-center">User Name</h2>
-        <div className= "pl-3">Points <span className="badge badge-warning">3</span></div>
-        <div className= "pl-3">Rank <span className="badge badge-warning">3</span></div>
+        <div className= "pl-3">Points <span className="badge badge-warning float-right">3</span></div>
+        <div className= "pl-3">Rank <span className="badge badge-warning float-right">3</span></div>
       </div>
     )
   }

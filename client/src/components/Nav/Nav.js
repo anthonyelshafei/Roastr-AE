@@ -10,7 +10,7 @@ const NavTabs = () => (
     <span className="navbar-toggler-icon"></span>
   </button>
   <div className="collapse navbar-collapse" id="navbarNav">
-    <ul className="navbar-nav">
+    <ul className="navbar-nav mx-auto">
             
       <li className="nav-item">
         <Link to="/main/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}> Feed</Link>
@@ -23,8 +23,10 @@ const NavTabs = () => (
       <li className="nav-item">
         <Link to="/main/Worst" className={window.location.pathname === "/worst" ? "nav-link active" : "nav-link"}>Worst</Link>
       </li>
-
     </ul>
+    
+      <button className="btn mr-1">Logout</button>
+    
   </div>
 </nav>
 
