@@ -1,6 +1,7 @@
 import React from "react";
 import AddRoast from "../AddRoast";
 import Pending from "../Pending";
+import Inbox from "../Inbox";
 
 class Social extends React.Component {
   render() {
@@ -18,7 +19,9 @@ class Social extends React.Component {
           </div>
           <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div className="card-body">
-              inbox
+             <Inbox />
+             <Inbox />
+             <Inbox />
             </div>
           </div>
         </div>
