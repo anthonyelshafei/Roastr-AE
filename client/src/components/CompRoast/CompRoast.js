@@ -4,12 +4,12 @@ class CompRoast extends React.Component {
     render() {
         return ( 
             
-            <div class="card text-center">
-                <div class="card-header">
+            <div className="card text-center">
+                <div className="card-header">
                     Player 1 @ Player 2
                 </div>
                 
-                <div class="card-body row">
+                <div className="card-body row">
                     
                     <div className="col">
                         Offense
@@ -20,7 +20,7 @@ class CompRoast extends React.Component {
                     </div>
                 </div>
                 
-                <div class="card-footer text-muted">
+                <div className="card-footer text-muted">
                     Voting system
                 </div>
             </div>

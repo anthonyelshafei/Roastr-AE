@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 const NavTabs = () => (
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-warning sticky-top">
-  <a class="navbar-brand" href="">Roastr</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+<nav className="navbar navbar-expand-lg navbar-light bg-warning sticky-top">
+  <a className="navbar-brand" href="">Roastr</a>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+  <div className="collapse navbar-collapse" id="navbarNav">
+    <ul className="navbar-nav">
             
       <li className="nav-item">
         <Link to="/main/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}> Feed</Link>
