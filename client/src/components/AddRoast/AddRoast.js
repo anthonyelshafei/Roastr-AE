@@ -58,6 +58,7 @@ handleFormSubmit = event => {
               <textarea name="roast" className="form-control" id="userSearch" rows="3" placeholder="Write your roast here..." onChange={this.handleInputChange} value={this.state.roast}>{this.state.roast}</textarea>
               </div>
             <button type="button" className="btn col-12">Roast</button>
+          </form>
     );
   }
 }
