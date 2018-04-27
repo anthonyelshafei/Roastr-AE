@@ -44,5 +44,8 @@ export default {
     },
     getPendings: function(name) {
         return axios.get("/api/roasts/users/pending/" + name)
+    },
+    getInbox: function(name) {
+        return axios.get("api/roasts/users/inbox/" + name)
     }
 };

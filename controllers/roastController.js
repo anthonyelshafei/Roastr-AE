@@ -23,6 +23,12 @@ module.exports = {
   },
   getPendings: function(req, res) {
     db.Roast
+      .find({roastrName: req.params.name, reply: ""})
+      .then(dbRoast => res.json(dbRoast))
+      .catch(err => res.status(422).json(err));
+  },
+  getInbox: function(req, res) {
+    db.Roast
       .find({recipientName: req.params.name, reply: ""})
       .then(dbRoast => res.json(dbRoast))
       .catch(err => res.status(422).json(err));

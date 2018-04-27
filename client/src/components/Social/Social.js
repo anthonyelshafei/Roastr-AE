@@ -19,8 +19,7 @@ class Social extends React.Component {
 
     API.getPendings(this.state.userInfo.username).then(res => {
       this.setState({pendings: res.data})
-      console.log("pendings:")
-      console.log(this.state.pendings)
+      
     })
   })
 }
@@ -63,8 +62,8 @@ class Social extends React.Component {
                 key={item._id}
                 roast={item.roast}
                 recipientName={item.recipientName}
+                recipientImage={item.recipientImage}
                 roastrName={item.roastrName}
-                roastrImage={item.roastrImage}
                 date={item.date}
                 roastrScore={item.roastrScore}
                 />

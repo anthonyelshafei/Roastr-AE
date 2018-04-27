@@ -22,6 +22,10 @@ router
 router
   .route("/users/pending/:name")
   .get(roastController.getPendings);
+// Matches with "/api/roasts/users/inbox/:name"
+router
+  .route("/users/inbox/:name")
+  .get(roastController.getInbox);
 
   
 module.exports = router;

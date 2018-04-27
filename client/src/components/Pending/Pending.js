@@ -35,20 +35,20 @@ const Pending = props => (
 
         <span className="align-middle text-right">
             <small>
-            {/* From: {props.roastrName}<br/>
-            Date: {props.date} */}
+            To: {props.recipientName}<br/>
+            Date: {props.date}
             </small>
         </span>
 
         <span className="my-auto text-left">
             <span><small>From: {props.roastrName}</small> </span>
-            <span className="badge badge-pill badge-danger">{props.roastrScore}</span><br/>
+            <span className="badge badge-pill badge-danger">{props.recipientScore}</span><br/>
             <small>{props.date}</small>
         </span>
         
         <div style={imgStyle} className="my-auto mr-1">
           <Userimage
-          image={props.roastrImage}
+          image={props.recipientImage}
           />
         </div>
        
