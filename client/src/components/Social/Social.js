@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import Pending from "../Pending";
 import Inbox from "../Inbox";
 import Modal from "../Modal";
+import InboxModal from "../InboxModal";
 
 class Social extends React.Component {
 
@@ -11,7 +12,8 @@ class Social extends React.Component {
     userInfo: {},
     pendings: [],
     inbox: [],
-    pendingRoast: ""
+    pendingRoast: "",
+    RoastToReply: ""
   }
 
   componentDidMount(){
@@ -30,6 +32,14 @@ class Social extends React.Component {
 
   changeRoast = (roast) => {
     this.setState({pendingRoast: roast})
+  }
+  
+  submitResponse = (response) => {
+    console.log(response)
+  }
+
+  getRoastInfo = (info) => {
+    this.setState({RoastToReply: info})
   }
 
 
@@ -52,9 +62,15 @@ class Social extends React.Component {
                <Inbox
                 roastrName={item.roastrName}
                 roastrScore={item.roastrScore}
+                id={item._id}
                 date={item.date}
+                getRoastInfo={this.getRoastInfo}
                 />
              ))}
+            <InboxModal
+              getRoastInfo={this.getRoastInfo}
+              roastId={this.state.RoastToReply}
+            />
             </div>
           </div>
         </div>

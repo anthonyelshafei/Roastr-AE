@@ -22,13 +22,17 @@ export default {
     findRecipient: function(name) {
         return axios.get("/api/users/recipient/" + name)
     },
-    // Gets all users
+    
     getUsers: function() {
         return axios.get("/api/users");
     },
+
     // Adds an roast to the database
     addRoast: function(roastData) {
         return axios.post("/api/roasts", roastData);
+    },
+    updateRoast: function(roastData, id) {
+        return axios.put(`/api/roasts/${id}`, roastData);
     },
     // Deletes the roast with the given id
     deleteRoast: function(id) {

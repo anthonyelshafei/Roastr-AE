@@ -21,7 +21,6 @@ class Main extends React.Component {
 
     axios.get("/api/sessioninfo").then(res => {
           this.setState({userInfo: res.data})
-          console.log(res.data)
           if(res.data === ""){
             window.location.href = '/'
           }

@@ -14,7 +14,6 @@ class AddRoast extends React.Component {
   componentDidMount(){
     //grabs all roasters
     API.getUsers().then(res => {
-        console.log(res.data)
         this.setState({roasters: res.data})
     })
 
@@ -29,7 +28,6 @@ handleInputChange = event => {
   let value = event.target.value;
   const name = event.target.name;
   this.setState({ [name]: value })
-  console.log(name, value)
 };
 
 handleFormSubmit = event => {

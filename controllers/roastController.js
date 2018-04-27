@@ -51,7 +51,7 @@ module.exports = {
       .then(dbRoast => res.json(dbRoast))
       .catch(err => res.status(422).json(err));
   },
-  update: function(req, res) {
+  updateRoast: function(req, res) {
     db.Roast
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbRoast => res.json(dbRoast))

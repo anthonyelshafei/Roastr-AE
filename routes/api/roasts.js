@@ -10,7 +10,7 @@ router.route("/")
 router
   .route("/:id")
   .get(roastController.findById)
-  .put(roastController.update)
+  .put(roastController.updateRoast)
   .delete(roastController.remove);
 
 // Matches with "/api/roasts/users/:roastr"
