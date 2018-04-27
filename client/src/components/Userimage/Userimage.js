@@ -8,6 +8,7 @@ const squareStyle = {
     borderRadius: '50%',
   };
 
+  
   // style={imgStyle}
 
 const Userimage = props => (
