@@ -19,6 +19,11 @@ router
   .route("/user/:username")
   .get(userController.findByName)
 
+// Matches with "/api/users/recipient/:name"
+router
+  .route("/recipient/:username")
+  .get(userController.findRecipient)
+
 
 
 module.exports = router;

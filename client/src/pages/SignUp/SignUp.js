@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import Logo from "../../components/Logo";
 import API from "../../utils/API";
-import axios from "axios";
 
 class SignUp extends React.Component {
 
@@ -42,7 +41,7 @@ class SignUp extends React.Component {
             }
             else{
                 API.addUser(userData)
-                alert("User created!")
+                window.location.href = '/main';
             }
         });
         

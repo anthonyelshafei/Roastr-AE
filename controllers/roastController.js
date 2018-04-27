@@ -15,17 +15,32 @@ module.exports = {
       .then(dbRoast => res.json(dbRoast))
       .catch(err => res.status(422).json(err));
   },
-  findByName: function(req, res) {
+  findYourRoasts: function(req, res) {
     db.Roast
-      .findByName({roastr: req.params.roastr})
+      .findYourRoasts({roastr: req.params.roastr})
+      .then(dbRoast => res.json(dbRoast))
+      .catch(err => res.status(422).json(err));
+  },
+  getPendings: function(req, res) {
+    db.Roast
+      .find({roastrName: req.params.name, reply: ""})
+      .then(dbRoast => res.json(dbRoast))
+      .catch(err => res.status(422).json(err));
+  },
+  getInbox: function(req, res) {
+    db.Roast
+      .find({recipientName: req.params.name, reply: ""})
       .then(dbRoast => res.json(dbRoast))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
     const roast = {
-      _id: req.body._id,
-      roastr: req.body.roastr,
-      recipient: req.body.recipient,
+      roastrName: req.body.roastrName,
+      roastrImage: req.body.roastrImage,
+      roastrScore: req.body.roastrScore,
+      recipientName: req.body.recipientName,
+      recipientImage: req.body.recipientImage,
+      recipientScore: req.body.recipientScore,
       roast: req.body.roast,
       reply: req.body.reply,
       roastScore: 0,

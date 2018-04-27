@@ -7,16 +7,15 @@ const squareStyle = {
     backgroundSize: 'cover',
     borderRadius: '50%',
   };
-
   
   // style={imgStyle}
 
 const Userimage = props => (
     <div style={squareStyle} className="square">
         <div className="content">
-
         </div>
     </div>
+
 );
 
 export default Userimage;

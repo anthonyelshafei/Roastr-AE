@@ -14,7 +14,7 @@ class Roast extends React.Component {
 
   render() {
     
-    const {roastr, recipient, roast, reply, roastScore, replyScore} = this.props.details;
+    const {, recipient, roast, reply, roastScore, replyScore} = this.props.details;
 
     return (
       <div className="completed-roast">

@@ -3,12 +3,17 @@ const Schema = mongoose.Schema;
 
 const roastSchema = new Schema({
   
-  roastr: { type: String, required: true },
-  recipient: { type: String, required: true },
+  roastrName: { type: String, required: true },
+  roastrImage: { type: String, required: true },
+  roastrScore: { type: Number, required: true },
+  recipientName: { type: String, required: true },
+  recipientImage: { type: String, required: true },
+  recipientScore: { type: Number, required: true },
   roast: { type: String, required: true },
   reply: { type: String, default: "" },
   roastScore: { type: Number, default: 0},
-  replyScore: { type: Number, default: 0}
+  replyScore: { type: Number, default: 0},
+  date: { type: Date, default: Date.now }
 });
 
 const Roast = mongoose.model("Roast", roastSchema);

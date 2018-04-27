@@ -6,11 +6,10 @@ const imgStyle = {
     maxWidth: 50,
   };
 
-  // style={imgStyle}
 
-class Pending extends React.Component {
-  render() {
-    return (
+
+const Pending = props => (
+    
       <div className="row border-bottom justify-content-between p-1">
         
         <div>
@@ -25,7 +24,7 @@ class Pending extends React.Component {
                     </button>
                 </div>
                 <div class="modal-body">
-                    Asad is a butthead.
+                    {props.roast}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -43,18 +42,19 @@ class Pending extends React.Component {
         </span>
 
         <span className="my-auto text-left">
-            <span><small>Asad</small> </span>
-            <span className="badge badge-pill badge-danger">600</span><br/>
-            <small>dd/mm/yy</small>
+            <span><small>{props.recipientName}</small> </span>
+            <span className="badge badge-pill badge-danger">{props.recipientScore}</span><br/>
+            <small>{props.date.substring(0,10)}</small>
         </span>
         
         <div style={imgStyle} className="my-auto mr-1">
-          <Userimage/>
+          <Userimage
+          image={props.recipientImage}
+          />
         </div>
        
       </div>
-    )
-  }
-}
+
+);
 
 export default Pending;
