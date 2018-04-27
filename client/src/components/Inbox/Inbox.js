@@ -8,9 +8,7 @@ const imgStyle = {
 
   // style={imgStyle}
 
-class Inbox extends React.Component {
-  render() {
-    return (
+const Inbox = props => (
       <div className="row border-bottom justify-content-between p-1">
 
         <div style={imgStyle} className="my-auto mr-1">
@@ -29,12 +27,12 @@ class Inbox extends React.Component {
                 </div>
                 <form>
                     <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <label for="exampleFormControlTextarea1">Roast 'em back!</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 </form>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Send</button>
                 </div>
                 </div>
             </div>
@@ -49,9 +47,9 @@ class Inbox extends React.Component {
         </span>
 
         <span className="my-auto text-left">
-            <span><small>Asad</small> </span>
-            <span className="badge badge-pill badge-danger">600</span><br/>
-            <small>dd/mm/yy</small>
+            <span><small>{props.roastrName}</small> </span>
+            <span className="badge badge-pill badge-danger">{props.roastrScore}</span><br/>
+            <small>{props.date.substring(0,10)}</small>
         </span>
         
         <button type="button" class="btn btn-primary mt-1" data-toggle="modal" data-target="#inboxModal">Reply</button>
@@ -59,8 +57,6 @@ class Inbox extends React.Component {
 
        
       </div>
-    )
-  }
-}
+);
 
 export default Inbox;

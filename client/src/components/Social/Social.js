@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import API from "../../utils/API";
-import AddRoast from "../AddRoast";
 import Pending from "../Pending";
 import Inbox from "../Inbox";
 
@@ -9,7 +8,8 @@ class Social extends React.Component {
 
   state= {
     userInfo: {},
-    pendings: []
+    pendings: [],
+    inbox: []
   }
 
   componentDidMount(){
@@ -19,6 +19,10 @@ class Social extends React.Component {
 
     API.getPendings(this.state.userInfo.username).then(res => {
       this.setState({pendings: res.data})
+
+    API.getInbox(this.state.userInfo.username).then(res => {
+      this.setState({inbox: res.data})
+    })
       
     })
   })
@@ -39,9 +43,13 @@ class Social extends React.Component {
           </div>
           <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div className="card-body">
-             <Inbox />
-             <Inbox />
-             <Inbox />
+             {this.state.inbox.map(item => (
+               <Inbox
+                roastrName={item.roastrName}
+                roastrScore={item.roastrScore}
+                date={item.date}
+                />
+             ))}
             </div>
           </div>
         </div>

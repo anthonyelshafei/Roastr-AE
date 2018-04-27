@@ -6,9 +6,10 @@ const imgStyle = {
     maxWidth: 50,
   };
 
-  // style={imgStyle}
+
 
 const Pending = props => (
+    
       <div className="row border-bottom justify-content-between p-1">
         
         <div>
@@ -35,15 +36,15 @@ const Pending = props => (
 
         <span className="align-middle text-right">
             <small>
-            To: {props.recipientName}<br/>
-            Date: {props.date}
+            To: <br/>
+            Date: 
             </small>
         </span>
 
         <span className="my-auto text-left">
-            <span><small>From: {props.roastrName}</small> </span>
+            <span><small>{props.recipientName}</small> </span>
             <span className="badge badge-pill badge-danger">{props.recipientScore}</span><br/>
-            <small>{props.date}</small>
+            <small>{props.date.substring(0,10)}</small>
         </span>
         
         <div style={imgStyle} className="my-auto mr-1">

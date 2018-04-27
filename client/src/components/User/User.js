@@ -2,10 +2,7 @@ import React from "react";
 import Userimage from "../Userimage";
 import axios from "axios";
 
-const square = {
-  width: "30%",
-  paddingBottom: "30%",
-};
+
 
 // style={imgStyle}
 

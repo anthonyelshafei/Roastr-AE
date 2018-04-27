@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import Logo from "../../components/Logo";
-import axios from "axios";
 import API from "../../utils/API";
 
 
