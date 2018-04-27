@@ -1,0 +1,132 @@
+/* most styles borrowed from
+https://codepen.io/Lewitje/pen/BNNJjo?q=login&order=popularity&depth=everything&show_forks=false
+*/
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #f44d2f;
+  font-weight: 300;
+}
+body ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #2d3035;
+  font-weight: 300;
+}
+
+.container h1 {
+  -webkit-transform: translateY(85px);
+          transform: translateY(85px);
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 80px 0;
+  height: 400px;
+  text-align: center;
+}
+.container h1 {
+  font-size: 40px;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: ease-in-put;
+          transition-timing-function: ease-in-put;
+  font-weight: 200;
+}
+form {
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+form input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 1px solid rgba(45,48,53, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  font-weight: 300;
+}
+form input:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+form input:focus {
+  width: 300px;
+  background: gold;
+  color: #f44d2f;
+  transition: ease-out all 0.3s;
+  box-shadow: 0px 0px 25px orange;
+
+}
+.loginbutton {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 0;
+  padding: 10px 15px;
+  color: #2d3035;
+  background: #f44d2f;
+  border-radius: 3px;
+  width: 125px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+}
+form button:hover {
+	background: gold;
+	color: #f44d2f;
+	transition: ease-out all 0.3s;
+	box-shadow: 0px 0px 25px orange;
+}
+
+form button:active {
+    background: gold;
+	color: #f44d2f;
+	transition: ease-out all 0.3s;
+	box-shadow: 0px 0px 25px orange;
+    }
+
+form button:after {
+	transition: all 0.3s;
+    background:#2D3035;
+}
+
+.fadeout {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .5s, opacity .5s linear;
+}
+
+.fadeout2 {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .5s, opacity .5s linear;
+}
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.fadein {
+  opacity: 0;
+  animation:fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+}
