@@ -7,7 +7,6 @@ const imgStyle = {
 
 const Userimage = props => (
     <img style={imgStyle} src={props.image} alt=""/>
-
 );
 
 export default Userimage;
