@@ -3,30 +3,35 @@ import axios from "axios";
 import API from "../../utils/API";
 import Pending from "../Pending";
 import Inbox from "../Inbox";
+import Modal from "../Modal";
 
 class Social extends React.Component {
 
   state= {
     userInfo: {},
     pendings: [],
-    inbox: []
+    inbox: [],
+    pendingRoast: ""
   }
 
   componentDidMount(){
     axios.get("/api/sessioninfo").then(response => {
       this.setState({userInfo: response.data})
-      
-
+    
     API.getPendings(this.state.userInfo.username).then(res => {
       this.setState({pendings: res.data})
 
     API.getInbox(this.state.userInfo.username).then(res => {
       this.setState({inbox: res.data})
     })
-      
-    })
+   })
   })
-}
+};
+
+  changeRoast = (roast) => {
+    this.setState({pendingRoast: roast})
+  }
+
 
   render() {
     return (
@@ -69,6 +74,7 @@ class Social extends React.Component {
                 id={item._id}
                 key={item._id}
                 roast={item.roast}
+                changeRoast={this.changeRoast}
                 recipientName={item.recipientName}
                 recipientImage={item.recipientImage}
                 roastrName={item.roastrName}
@@ -76,6 +82,9 @@ class Social extends React.Component {
                 roastrScore={item.roastrScore}
                 />
               ))}
+              <Modal
+               roast={this.state.pendingRoast}
+              />
             </div>
           </div>
         </div>
