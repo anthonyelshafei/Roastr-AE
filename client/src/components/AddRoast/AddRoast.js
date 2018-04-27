@@ -67,7 +67,7 @@ handleFormSubmit = event => {
         <form onSubmit={this.handleFormSubmit}>
             <div className="form-group">
               <select name="recipientName" className="form-control" id="userSearch" onChange={this.handleInputChange} value={this.state.recipientName}>
-                <option default>Select a Roaster...</option>
+                <option default>Select someone to Roast...</option>
                 {this.state.roasters.map(item => 
                 <option key={item._id}>{item.username}</option>
                 )}

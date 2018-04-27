@@ -33,13 +33,13 @@ class Main extends React.Component {
       <div>
 
         <Nav />
-        <div className="row px-3 pt-5">
+        <div className="row px-3">
         
-          <div className="col-10 col-xs-8 col-sm-8 offset-sm-2 col-md-2 col-lg-2 col-xl-2 mx-auto">
+          <div className="col-10 col-xs-8 col-sm-8 offset-sm-2 col-md-4 col-lg-3 col-xl-3 mx-auto">
             <User />
           </div>
 
-          <div className="col-sm-12 col-md-9 col-lg-6 col-xl-7">
+          <div className="col-sm-12 col-md-8 col-lg-5 col-xl-6">
             <Route exact path={`${this.props.match.url}`} component={Feed}/>   
             <Route exact path={`${this.props.match.url}/Worst`} component={Worst}/>
             <Route exact path={`${this.props.match.url}/Best`} component={Best}/>

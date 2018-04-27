@@ -1,9 +1,14 @@
 import React from "react";
 
+const imgStyle = {
+  width: '100%',
+  zIndex: 100,
+};
+
 const Logo = props => (
-  <div className="text-center col-lg-6 col-offset-lg-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-2">
-    <img src="./images/logo-1.png" className="img-responsive" alt=""/>
-  </div>
+  
+  <img style={imgStyle} src="https://i.imgur.com/9t9gT3Y.png" alt="Roastr"/>
+  
 );
 
 export default Logo;

@@ -7,9 +7,9 @@ class Feed extends React.Component {
  render() {
    return (
      <div id="feed" className="container-fluid">
-
        <h2>Roast</h2>
        <AddRoast/>
+       <br/>
        <br/>
        <h2>Feed</h2>
        <CompRoast/>

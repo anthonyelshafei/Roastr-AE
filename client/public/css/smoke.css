@@ -1,6 +1,5 @@
 canvas {
 	display: block;
-	vertical-align: bottom;
 } /* ---- particles.js container ---- */
 
 #particles2-js {
@@ -14,7 +13,7 @@ canvas {
 	background-size: cover;
 	background-position: 50% 50%;
 	opacity: .8;
-	z-index: -1;
+	z-index: -3;
 
 } /* ---- stats.js ---- */
 
