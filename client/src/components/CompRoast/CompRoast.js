@@ -14,15 +14,19 @@ class CompRoast extends React.Component {
                 <div className="card-header row text-center justify-content-between">
                     
                     <div style={imgStyle} className="d-flex ml-auto mr-3">
-                        <Userimage />
+                        <Userimage
+                        image={this.props.roastrImage} 
+                        />
                     </div>
                     
                     <div className="d-flex my-auto">
-                        Player 1 @ Player 2
+                        {this.props.roastrName} | {this.props.recipientName}
                     </div>
                     
                     <div style={imgStyle} className="d-flex mr-auto ml-3">
-                        <Userimage />
+                        <Userimage
+                        image={this.props.recipientImage}
+                        />
                     </div>
 
                 </div>
@@ -30,11 +34,11 @@ class CompRoast extends React.Component {
                 <div className="card-body row">
                     
                     <div className="col border-right">
-                        Offense
+                        {this.props.roast}
                     </div>
                     
                     <div className="col">
-                        Defense
+                        {this.props.reply}
                     </div>
                 </div>
                 
