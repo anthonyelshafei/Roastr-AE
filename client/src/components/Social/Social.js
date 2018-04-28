@@ -7,6 +7,7 @@ import Modal from "../Modal";
 import InboxModal from "../InboxModal";
 import Chat from "../Chat";
 
+
 class Social extends React.Component {
 
   state= {
