@@ -12,6 +12,7 @@ const Userimage = function(props){
         backgroundImage: `url(${props.image})`,
         backgroundSize: 'cover',
         backgroundRepeat:'none',
+        backgroundPosition: 'center',
         backgoundColor: 'gold',
         border: 'solid 2px #f44d2f',
     };
