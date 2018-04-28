@@ -5,7 +5,8 @@ import Pending from "../Pending";
 import Inbox from "../Inbox";
 import Modal from "../Modal";
 import InboxModal from "../InboxModal";
-import Chat from "../Chat"
+import Chat from "../Chat";
+
 
 class Social extends React.Component {
 

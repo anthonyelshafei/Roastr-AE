@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 var session = require('express-session');
 const routes = require("./routes");
-
+const socket = require("socket.io");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
