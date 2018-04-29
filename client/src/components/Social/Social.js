@@ -5,7 +5,7 @@ import Pending from "../Pending";
 import Inbox from "../Inbox";
 import Modal from "../Modal";
 import InboxModal from "../InboxModal";
-import Chat from "../Chat";
+//import Chat from "../Chat";
 
 
 class Social extends React.Component {
@@ -124,7 +124,7 @@ class Social extends React.Component {
           </div>
           <div id="collapseThree" className="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
             <div className="card-body">
-              <Chat />
+              Chat
             </div>
           </div>
         </div>
