@@ -190,6 +190,8 @@ label:active {
 	text-shadow: 0 0 10px orange;
 }
 
+
+
 #sideName {
 	margin: 30px 0 0 0;
 	text-align: center;
@@ -224,6 +226,7 @@ label:active {
 	border-radius: 50%;
 }
 
+
 table a:hover {
 	background: transparent;
 	color: gold;
@@ -234,6 +237,7 @@ table a:hover {
 	height: 28px;
 	width: auto;
 }
+
 
 #userImageDiv {
 	width: 210px;
@@ -280,11 +284,13 @@ table a:hover {
 	color: gold;
 }
   
+
   .square:after {
 	content: "";
 	display: block;
 	padding-bottom: 100%;
- }
+
+  }
 
   .card {
     position: relative;
@@ -301,23 +307,5 @@ table a:hover {
 	border-radius: .25rem;
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 3px;
-}
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.3); 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.3); 
-}
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: gold;
-    box-shadow: 0 0 10px orange;
-}

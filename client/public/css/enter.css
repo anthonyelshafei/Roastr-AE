@@ -44,24 +44,22 @@ form {
   padding: 0;
   position: relative;
   z-index: 2;
-  color: #f44d2f;
 }
-
 form input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   outline: 0;
-  border: 2px solid #f44d2f;
-  background-color: #2d3035;
+  border: 1px solid rgba(45,48,53, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
   width: 250px;
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 10px 15px;
   margin: 0 auto 10px auto;
   display: block;
   text-align: center;
   font-size: 18px;
-  color: gold;
+  color: white;
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
   font-weight: 300;

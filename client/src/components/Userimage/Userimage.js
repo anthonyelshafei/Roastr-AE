@@ -8,12 +8,9 @@ const Userimage = function(props){
     const squareStyle = {
         position: 'relative',
         width: '100%',
-        borderRadius: '50%',
-        backgroundImage: `url(${props.image})`,
+        background: `url(${props.image})`,
         backgroundSize: 'cover',
-        backgroundRepeat:'none',
-        backgroundPosition: 'center',
-        backgoundColor: 'gold',
+        borderRadius: '50%',
         border: 'solid 2px #f44d2f',
     };
     return(
