@@ -13,7 +13,8 @@ const roastSchema = new Schema({
   reply: { type: String, default: "" },
   roastScore: { type: Number, default: 0},
   replyScore: { type: Number, default: 0},
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+  replied: {type: Boolean, default: false}
 });
 
 const Roast = mongoose.model("Roast", roastSchema);
