@@ -135,7 +135,10 @@ import React from "react";
            </div>
            <div id="collapseThree" className="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
              <div className="card-body">
-               <Chat />
+               <Chat
+               username={this.state.userInfo.username}
+               image={this.state.userInfo.image}
+                />
              </div>
            </div>
          </div>

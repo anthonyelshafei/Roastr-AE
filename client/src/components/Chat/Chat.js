@@ -1,8 +1,16 @@
 import React from "react";
 import io from "socket.io-client";
+import Userimage from "../Userimage";
 
 var connection = document.URL
 console.log(connection)
+
+const chatImage = {
+
+    maxWidth: 30,
+    maxHeight: 30
+    
+};
 
 if(document.URL === 'http://localhost:3000/main'){
     connection='localhost:3001';
@@ -12,11 +20,15 @@ else{
 }
 
 class Chat extends React.Component{
+
+    
+
+
     constructor(props){
         super(props);
 
         this.state = {
-            username: '',
+            // username: this.props.username,
             message: '',
             messages: []
         };
@@ -36,7 +48,7 @@ class Chat extends React.Component{
         this.sendMessage = ev => {
             ev.preventDefault();
             this.socket.emit('SEND_MESSAGE', {
-                author: this.state.username,
+                author: this.props.username,
                 message: this.state.message
             })
             this.setState({message: ''});
@@ -55,15 +67,24 @@ class Chat extends React.Component{
                                 <div className="messages">
                                     {this.state.messages.map(message => {
                                         return (
-                                            <div>{message.author}: {message.message}</div>
+                                            <div className="container">
+                                            <div className="row border-bottom border-danger">
+                                                <div className="col-3 text-left " style={chatImage}> <Userimage image={this.props.image}/></div> 
+                                                <div className="col-9"><small>{message.author}:</small></div>
+                                            </div>
+                                            
+                                            <div className="row">
+                                                <div><small>{message.message}</small></div>
+                                            </div>
+                                            </div>
                                         )
                                     })}
                                 </div>
 
                             </div>
                             <div>
-                                <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-control"/>
-                                <br/>
+                                {/* <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-control"/>
+                                <br/> */}
                                 <input type="text" placeholder="Message" className="form-control" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})}/>
                                 <br/>
                                 <button onClick={this.sendMessage} className="btn btn-primary form-control"><img src="https://i.imgur.com/keUwOqg.png" heigt="16px"/></button>

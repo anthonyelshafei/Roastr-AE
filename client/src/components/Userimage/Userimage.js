@@ -8,8 +8,8 @@ const Userimage = function(props){
     const squareStyle = {
         position: 'relative',
         width: '100%',
-        minWidth: 50,
-        minHeight: 50,
+        minWidth: 30,
+        minHeight: 30,
         backgroundImage: `url(${props.image})`,
         backgroundPosition: 'center',
         backgroundRepeat: 'no repeat',
