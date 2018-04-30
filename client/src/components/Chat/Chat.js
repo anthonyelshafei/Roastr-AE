@@ -1,5 +1,5 @@
 import React from "react";
-import Userimage from "../Userimage";
+// import Userimage from "../Userimage";
 
 class Chat extends React.Component{
     constructor(props){
