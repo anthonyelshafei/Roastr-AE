@@ -17,7 +17,9 @@ const Inbox = function(props) {
       <div className="row border-bottom justify-content-between p-1">
 
         <div style={imgStyle} className="my-auto mr-1">
-          <Userimage/>
+          <Userimage
+          image = {props.roastrImage}
+          />
         </div>
 
         <div>
