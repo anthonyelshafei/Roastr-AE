@@ -48,29 +48,29 @@ import React from "react";
  
  
          return (
-             <div class="modal fade" id="inboxModal" tabindex="-1" role="dialog" aria-labelledby="inboxModalTitle" aria-hidden="true">
-             <div class="modal-dialog modal-dialog-centered" role="document">
-                 <div class="modal-content">
-                 <div class="modal-header">
-                     <h5 class="modal-title" id="pending">Incoming Roast</h5>
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <div className="modal fade" id="inboxModal" tabindex="-1" role="dialog" aria-labelledby="inboxModalTitle" aria-hidden="true">
+             <div className="modal-dialog modal-dialog-centered" role="document">
+                 <div className="modal-content bg-dark p-3">
+                 <div className="modal-header">
+                     <h5 className="modal-title" id="pending">Incoming Roast</h5>
+                     <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true">&times;</span>
                      </button>
                  </div>
                  <form name="textbox" value={this.state.textbody} onChange={this.handleInputChange} onSubmit={this.handleFormSubmit}>
-                     <div class="form-group">
+                     <div className="form-group">
                      <label for="exampleFormControlTextarea1">Roast 'em back!</label>
-                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                     <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
                  </div>
                  
-                 <div class="modal-footer">
+                 <div className="modal-footer">
                 {this.state.responded ? (
                     <div>
-                    <span>Roast has been sent!</span>
-                    <button type="button" onClick={this.resetModal} data-dismiss="modal" class="btn btn-secondary">Close</button>
+                    <span className="mr-3">Roast has been sent!</span>
+                    <button type="button" onClick={this.resetModal} data-dismiss="modal" className="btn btn-secondary">Close</button>
                     </div>
                 ) : (
-                     <button type="submit" class="btn btn-secondary">Send</button>
+                     <button type="submit" className="btn btn-secondary">Send</button>
                 )}
                  </div>
                  </form>
