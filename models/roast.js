@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+var d = new Date();
+var localDate = d.toLocaleDateString();
+
 const roastSchema = new Schema({
   
   roastrName: { type: String, required: true },
@@ -13,7 +16,7 @@ const roastSchema = new Schema({
   reply: { type: String, default: "" },
   roastScore: { type: Number, default: 0},
   replyScore: { type: Number, default: 0},
-  date: { type: Date, default: Date.now },
+  date: { type: Date, default: localDate },
   replied: {type: Boolean, default: false}
 });
 
