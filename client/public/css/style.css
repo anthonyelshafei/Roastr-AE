@@ -303,7 +303,8 @@ table a:hover {
     color: gold;
     background-color: #2d3035;
     background-clip: border-box;
-	border-radius: .25rem;
+    border: 2px solid #f44d2f;
+	border-radius: .3rem;
 }
 
 
