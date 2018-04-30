@@ -3,6 +3,17 @@
 /*gold*/
 /*warm grey #191b1e*/
 /*cool grey #2d3035*/
+#linkz {
+	font-size: 15px;
+	color: gold;
+}
+
+#linkz:hover{
+    -webkit-stroke-width: 5.3px;
+      -webkit-stroke-color: gold;
+      -webkit-fill-color: gold;
+	  text-shadow: 0 0 10px gold;
+}
 
 #login {
 	border-right: 2px solid #F44D2F;

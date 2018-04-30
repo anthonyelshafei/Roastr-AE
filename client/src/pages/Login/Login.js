@@ -58,8 +58,8 @@ class Login extends React.Component {
                         id="login-button" 
                         className="loginbutton"
                         >Login</button>
-                        <br/>
-
+                        <br/><br/>
+                        <h3 id="linkz"><a href="/signup">New to Roastr?</a></h3>
                     </form>
                 </div>
             </Fragment>
