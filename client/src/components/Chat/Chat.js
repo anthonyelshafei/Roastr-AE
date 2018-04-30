@@ -1,5 +1,6 @@
 import React from "react";
 import io from "socket.io-client";
+const PORT = process.env.PORT || 3001;
 
 class Chat extends React.Component{
     constructor(props){
@@ -11,7 +12,7 @@ class Chat extends React.Component{
             messages: []
         };
 
-        this.socket = io('localhost:3001');
+        this.socket = io('localhost: ' + PORT);
 
 
         this.socket.on('RECEIVE_MESSAGE', function(data){
