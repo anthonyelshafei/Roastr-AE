@@ -4,7 +4,7 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     db.Roast
-      .find({replied: true})
+      .find(req.query)
       .sort({ date: -1 })
       .then(dbRoast => res.json(dbRoast))
       .catch(err => res.status(422).json(err));
@@ -44,7 +44,7 @@ module.exports = {
       roast: req.body.roast,
       reply: req.body.reply,
       roastScore: 0,
-      replyScore: 0,
+      replyScore: 0
     };
     db.Roast
       .create(roast)

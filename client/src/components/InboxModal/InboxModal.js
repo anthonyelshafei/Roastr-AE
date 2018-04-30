@@ -1,31 +1,24 @@
 import React from "react";
 import API from "../../utils/API";
 
-
 /*data-dismiss="modal"*/
 
 class InboxModal extends React.Component {
 
     state = {
         textbody: "",
-        roastId: "",
-        responded: false
+        roastId: ""
     }
 
 
     componentDidMount = () => {
         
     }
-
-    resetModal = (event) => {
-        event.preventDefault()
-        this.setState({responded: false})
-        
-    }
     
 
     handleInputChange = event => {
         let value = event.target.value;
+        // const name = event.target.name;
         this.setState({ textbody: value })
     };
 
@@ -33,14 +26,9 @@ class InboxModal extends React.Component {
         event.preventDefault()
         console.log(this.props.roastId)
         var RoastData = {
-            reply: this.state.textbody,
-            replied: true
+            reply: this.state.textbody
         }
-        API.updateRoast(RoastData, this.props.roastId).then(() =>{
-            this.setState({responded: true})
-            this.setState({textbody: ""})
-            this.props.updateInbox()
-        })
+        API.updateRoast(RoastData, this.props.roastId)
     };
 
     render(props) {
@@ -63,14 +51,7 @@ class InboxModal extends React.Component {
                 </div>
                 
                 <div class="modal-footer">
-                {this.state.responded ? (
-                    <div>
-                    <span>Roast has been sent!</span>
-                    <button type="button" onClick={this.resetModal} data-dismiss="modal" class="btn btn-secondary">Close</button>
-                    </div>
-                ) : (
                     <button type="submit" class="btn btn-secondary">Send</button>
-                )}
                 </div>
                 </form>
                 </div>

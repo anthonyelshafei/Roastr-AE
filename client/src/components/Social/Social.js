@@ -28,13 +28,7 @@ class Social extends React.Component {
     })
    })
   })
-  };
-
-  updateInbox = () => {
-    API.getInbox(this.state.userInfo.username).then(res => {
-      this.setState({inbox: res.data})
-    })
-  }
+};
 
   changeRoast = (roast) => {
     this.setState({pendingRoast: roast})
@@ -58,7 +52,7 @@ class Social extends React.Component {
           <div className="card-header p-0 p-0" id="headingOne">
             
               <button className="btn btn-link col-12 col-12" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Inbox <strong>({this.state.inbox.length})</strong>
+                Inbox
               </button>
           
           </div>
@@ -76,7 +70,6 @@ class Social extends React.Component {
             <InboxModal
               getRoastInfo={this.getRoastInfo}
               roastId={this.state.RoastToReply}
-              updateInbox={this.updateInbox}
             />
             </div>
           </div>
@@ -86,7 +79,7 @@ class Social extends React.Component {
           <div className="card-header p-0" id="headingTwo">
             <h5 className="mb-0">
               <button className="btn btn-link col-12 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Pending <strong>({this.state.pendings.length})</strong>
+                Pending
               </button>
             </h5>
           </div>
