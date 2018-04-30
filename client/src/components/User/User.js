@@ -4,7 +4,7 @@ import axios from "axios";
 import Logo from "../Logo";
 
 const imgStyle = {
-  marginTop: "-3em",
+  marginTop: "-em",
   zIndex: -1,
 };
 // style={imgStyle}
