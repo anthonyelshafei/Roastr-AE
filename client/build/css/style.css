@@ -415,5 +415,22 @@ table a:hover {
 	padding: 0;
 }
 
+::-webkit-scrollbar {
+	width: 3px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+	background: transparent; 
+}
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #f44d2f;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: gold;
+	border-radius: 1px
+}
