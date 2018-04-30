@@ -11,8 +11,8 @@ class Chat extends React.Component{
             message: '',
             messages: []
         };
-
-        this.socket = io(3001 || window.location.href);
+        var currentLocation = window.location;
+        this.socket = io(currentLocation);
 
 
         this.socket.on('RECEIVE_MESSAGE', function(data){
