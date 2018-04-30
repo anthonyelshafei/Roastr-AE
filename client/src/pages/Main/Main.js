@@ -17,6 +17,7 @@ class Main extends React.Component {
     userInfo: {}
   }
 
+
   componentDidMount(){
 
     axios.get("/api/sessioninfo").then(res => {

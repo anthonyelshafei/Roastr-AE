@@ -33,7 +33,7 @@ axios.get("/api/sessioninfo").then(res => {
         <Userimage image={this.state.userInfo.image} style={imgStyle}/>
          
           
-          <h2 class = "text-center">{this.state.userInfo.username}</h2>
+          <h2 className = "text-center">{this.state.userInfo.username}</h2>
 
           </div>
         <div>Points <span className="badge badge-pill badge-warning float-right">{this.state.userInfo.score}</span></div>

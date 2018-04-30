@@ -3,9 +3,9 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 var session = require('express-session');
 const routes = require("./routes");
-
 const app = express();
 const PORT = process.env.PORT || 3001;
+const socket = require('socket.io');
 
 app.use(session({secret: "its a secret",
                  saveUninitialized: true,
@@ -39,7 +39,23 @@ mongoose.connect(
 );
 
 // Start the API server
-app.listen(PORT, () =>
+server = app.listen(PORT, () =>
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
 );
 
+
+// socket.io stuff
+
+// server = app.listen(PORT, function(){
+//     console.log('Socket.io server is running on port ${PORT}')
+// });
+
+io = socket(server);
+
+io.on('connection', (socket) => {
+    console.log(socket.id);
+
+    socket.on('SEND_MESSAGE', function(data){
+        io.emit('RECEIVE_MESSAGE', data);
+    })
+});

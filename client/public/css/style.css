@@ -255,7 +255,7 @@ table a:hover {
 }
 
 .card-body{
-	max-height: 530px;
+	max-height:700px;
 	overflow-y: scroll;
 }
 

@@ -60,6 +60,7 @@ import React from "react";
              
                <button className="btn btn-link col-12 col-12" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 
+
                 Inbox <strong>({this.state.inbox.length})</strong>
                </button>
            
@@ -74,6 +75,7 @@ import React from "react";
                  date={item.date}
                  getRoastInfo={this.getRoastInfo}
                  />
+
               ))}
              <InboxModal
                getRoastInfo={this.getRoastInfo}

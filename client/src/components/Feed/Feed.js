@@ -10,11 +10,13 @@ import CompRoast from "../CompRoast/CompRoast";
     completeRoasts: []
   }
 
+
   componentDidMount(){
     API.getRoasts().then(res => {
       this.setState({completeRoasts: res.data})
     })
   }
+
 
   render() {
     return (
