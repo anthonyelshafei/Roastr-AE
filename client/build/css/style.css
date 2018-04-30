@@ -3,6 +3,12 @@
 /*gold*/
 /*warm grey #191b1e*/
 /*cool grey #2d3035*/
+.roastrLink {
+	background: transparent;
+	color: #f44d2f !important;
+	border: transparent !important;
+}
+
 #linkz {
 	font-size: 15px;
 	color: gold;
