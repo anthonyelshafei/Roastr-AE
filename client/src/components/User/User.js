@@ -30,8 +30,9 @@ axios.get("/api/sessioninfo").then(res => {
          <div className="sidebar-header">
          
         <Logo />
+        <div className="col-10 offset-1">
         <Userimage image={this.state.userInfo.image} style={imgStyle}/>
-         
+         </div>
           
           <h2 className = "text-center">{this.state.userInfo.username}</h2>
 
