@@ -8,7 +8,7 @@ if(document.URL === 'http://localhost:3000/main'){
     connection='localhost:3001';
 }
 else{
-    connection=document.URL
+    connection=window.location.host;
 }
 
 class Chat extends React.Component{
