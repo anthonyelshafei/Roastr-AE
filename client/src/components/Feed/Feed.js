@@ -6,7 +6,7 @@ import CompRoast from "../CompRoast/CompRoast";
 class Feed extends React.Component {
  render() {
    return (
-     <div id="feed" className="container-fluid">
+     <div id="feed" className="container-fluid mb-3">
        <h2>Roast</h2>
        <AddRoast/>
        <br/>
