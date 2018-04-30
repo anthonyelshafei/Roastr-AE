@@ -81,6 +81,7 @@ import React from "react";
                  id={item._id}
                  date={item.date}
                  getRoastInfo={this.getRoastInfo}
+                 roastrImage={item.roastrImage}
                  />
 
               ))}
