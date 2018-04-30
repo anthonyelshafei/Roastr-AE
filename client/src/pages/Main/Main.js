@@ -17,15 +17,16 @@ class Main extends React.Component {
     userInfo: {}
   }
 
-  // componentDidMount(){
 
-  //   axios.get("/api/sessioninfo").then(res => {
-  //         this.setState({userInfo: res.data})
-  //         if(res.data === ""){
-  //           window.location.href = '/'
-  //         }
-  //     })
-  //   };
+  componentDidMount(){
+
+    axios.get("/api/sessioninfo").then(res => {
+          this.setState({userInfo: res.data})
+          if(res.data === ""){
+            window.location.href = '/'
+          }
+      })
+};
 
   render() {
     return (
