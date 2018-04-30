@@ -147,28 +147,11 @@ p {
 }
 
 .btn {
-	/* box-shadow: none;
+	box-shadow: none;
 	outline: none !important;
 	border: none;
 	color: #2d3035;
-	background: #f44d2f; */
 	background: #f44d2f;
-	outline: 0;
-	border: 0;
-	padding: 10px 15px;
-	color: gold;
-	border-radius: 3px;
-	cursor: pointer;
-	font-size: 18px;
-    /* fallback for old browsers */
-/*     
-    background: linear-gradient(266deg, #2d3035,  #f44d2f); */
-    
-  background: linear-gradient(120deg, #2d3035, #f44d2f, gold);
-    background-size: 400% 400%;
-    -webkit-animation: AnimationName 17s ease infinite;
-    -moz-animation: AnimationName 17s ease infinite;
-    animation: AnimationName 17s ease infinite;
 }
 
 .btn-info:active{
