@@ -53,7 +53,7 @@ class Social extends React.Component {
           <div className="card-header p-0" id="headingOne">
             
               <button className="btn btn-link col-12 col-12" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Inbox <span class="badge badge-pill badge-warning">3</span>
+                Inbox <span className="badge badge-pill badge-warning">3</span>
               </button>
           
           </div>
@@ -80,7 +80,7 @@ class Social extends React.Component {
           <div className="card-header p-0" id="headingTwo">
             <h5 className="mb-0">
               <button className="btn btn-link col-12 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Pending <span class="badge badge-pill badge-warning">6</span>
+                Pending <span className="badge badge-pill badge-warning">6</span>
               </button>
             </h5>
           </div>
