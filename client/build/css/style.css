@@ -3,7 +3,118 @@
 /*gold*/
 /*warm grey #191b1e*/
 /*cool grey #2d3035*/
+#linkz {
+	font-size: 15px;
+	color: gold;
+}
 
+#linkz:hover{
+    -webkit-stroke-width: 5.3px;
+      -webkit-stroke-color: gold;
+      -webkit-fill-color: gold;
+	  text-shadow: 0 0 10px gold;
+}
+
+.grad1 {
+	background: #f44d2f;
+	outline: 0;
+	border: 0;
+	padding: 10px 15px;
+	color: gold;
+	border-radius: 3px;
+	width: 125px;
+	cursor: pointer;
+	font-size: 18px;
+    /* fallback for old browsers */
+	/*     
+    background: linear-gradient(266deg, #2d3035,  #f44d2f); */
+	background: linear-gradient(120deg, #2d3035, #f44d2f, gold);
+	background-size: 400% 400%;
+	-webkit-animation: AnimationName 30s ease infinite;
+	-moz-animation: AnimationName 30s ease infinite;
+	animation: AnimationName 30s ease infinite;
+	mix-blend-mode: c;
+	}
+
+	.grad11 {
+		background: #f44d2f;
+		outline: 0;
+		border: 0;
+		padding: 10px 15px;
+		color: gold;
+		border-radius: 3px;
+		width: 100%;
+		cursor: pointer;
+		font-size: 18px;
+			/* fallback for old browsers */
+		/*     
+			background: linear-gradient(266deg, #2d3035,  #f44d2f); */
+		background: linear-gradient(120deg, #2d3035, #f44d2f, gold);
+		background-size: 400% 400%;
+		-webkit-animation: AnimationName 30s ease infinite;
+		-moz-animation: AnimationName 30s ease infinite;
+		animation: AnimationName 30s ease infinite;
+		mix-blend-mode: c;
+		}
+  
+  @-webkit-keyframes AnimationName {
+    0% {
+      background-position: 100% 0%; }
+    50% {
+      background-position: 0% 100%; }
+    100% {
+      background-position: 100% 0%; } }
+  
+  @-moz-keyframes AnimationName {
+    0% {
+      background-position: 100% 0%; }
+    50% {
+      background-position: 0% 100%; }
+    100% {
+      background-position: 100% 0%; } }
+  
+  @keyframes AnimationName {
+    0% {
+      background-position: 100% 0%; }
+    50% {
+      background-position: 0% 100%; }
+    100% {
+      background-position: 100% 0%; } }
+
+      
+.grad2 {
+  background: #f44d2f;
+  /* fallback for old browsers */
+  background: linear-gradient(136deg, #2d3035, #f44d2f, orange);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 19s ease infinite;
+  -moz-animation: AnimationName 19s ease infinite;
+  animation: AnimationName 19s ease infinite; }
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 15% 0%; }
+  50% {
+    background-position: 86% 100%; }
+  100% {
+    background-position: 15% 0%; } }
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 15% 0%; }
+  50% {
+    background-position: 86% 100%; }
+  100% {
+    background-position: 15% 0%; } }
+
+@keyframes AnimationName {
+  0% {
+    background-position: 15% 0%; }
+  50% {
+    background-position: 86% 100%; }
+  100% {
+    background-position: 15% 0%; } }
+      
 #login {
 	border-right: 2px solid #F44D2F;
 }
@@ -238,14 +349,6 @@ table a:hover {
 	width: auto;
 }
 
-
-#userImageDiv {
-	width: 210px;
-	height: 210px;
-	border-radius: 50%;
-	overflow: hidden;
-}
-
 .panel-default {
 	border: solid 2px gold;
 	box-shadow: 0 0 10px orange;
@@ -263,7 +366,7 @@ table a:hover {
 }
 
 .card-body{
-	max-height: 530px;
+	max-height:700px;
 	overflow-y: scroll;
 }
 
@@ -304,7 +407,12 @@ table a:hover {
     background-color: #2d3035;
     background-clip: border-box;
     border: 2px solid #f44d2f;
-	border-radius: .25rem;
+	border-radius: .275rem;
+}
+
+#social {
+	border: none;
+	padding: 0;
 }
 
 
