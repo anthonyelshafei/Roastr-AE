@@ -32,7 +32,7 @@ class Main extends React.Component {
       <div>
 
         <Nav />
-        <div className="row px-3">
+        <div className="row px-3 pb-3">
         
           <div className="col-10 col-xs-8 col-sm-8 offset-sm-2 col-md-4 col-lg-3 col-xl-3 mx-auto">
             <User />
@@ -44,7 +44,7 @@ class Main extends React.Component {
             <Route exact path={`${this.props.match.url}/Best`} component={Best}/>
           </div>
 
-          <div className="col-sm-12 col-md-9 offset-md-3 col-lg-4 offset-lg-0 col-xl-3">
+          <div className="col-sm-12 col-md-12 col-lg-4 offset-lg-0 col-xl-3">
             <Social />
           </div>
 
