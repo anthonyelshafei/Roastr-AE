@@ -238,14 +238,6 @@ table a:hover {
 	width: auto;
 }
 
-
-#userImageDiv {
-	width: 210px;
-	height: 210px;
-	border-radius: 50%;
-	overflow: hidden;
-}
-
 .panel-default {
 	border: solid 2px gold;
 	box-shadow: 0 0 10px orange;
@@ -304,7 +296,12 @@ table a:hover {
     background-color: #2d3035;
     background-clip: border-box;
     border: 2px solid #f44d2f;
-	border-radius: .3rem;
+	border-radius: .275rem;
+}
+
+#social {
+	border: none;
+	padding: 0;
 }
 
 
