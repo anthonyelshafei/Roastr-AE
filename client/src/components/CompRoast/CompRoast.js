@@ -43,8 +43,8 @@ class CompRoast extends React.Component {
                 </div>
                 
                 <div className="card-footer text-muted">
-                    <button className="btn col-6">Vote/Roast (user a name)</button>
-                    <button className="btn col-6">Vote/Roast (user b name)</button>
+                    <button className="btn col-5 mr-3">Vote/Roast (user a name)</button>
+                    <button className="btn col-5 ml-3">Vote/Roast (user b name)</button>
                 </div>
             </div>
             
