@@ -37,6 +37,12 @@ import React from "react";
       this.setState({inbox: res.data})
     })
   }
+
+  updatePendings = () => {
+    API.getPendings(this.state.userInfo.username).then(res => {
+      this.setState({pendings: res.data})
+    })
+  }
  
    changeRoast = (roast) => {
      this.setState({pendingRoast: roast})
@@ -92,13 +98,13 @@ import React from "react";
              <h5 className="mb-0">
                <button className="btn btn-link col-12 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 
-                Pending <strong>({this.state.pendings.length})</strong>
+                Pending <strong>({this.props.pendings.length})</strong>
                </button>
              </h5>
            </div>
            <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
              <div className="card-body">
-               {this.state.pendings.map(item => (
+               {this.props.pendings.map(item => (
                  <Pending
                  id={item._id}
                  key={item._id}

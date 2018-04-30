@@ -7,7 +7,8 @@ import CompRoast from "../CompRoast/CompRoast";
  class Feed extends React.Component {
 
   state = {
-    completeRoasts: []
+    completeRoasts: [],
+    pendings: []
   }
 
 
@@ -16,13 +17,19 @@ import CompRoast from "../CompRoast/CompRoast";
       this.setState({completeRoasts: res.data})
     })
   }
+  
+  updatePendings = () => {
+    this.props.updatePendings()
+  } 
 
 
   render() {
     return (
       <div id="feed" className="container-fluid">
       <h2>Roast</h2>
-        <AddRoast/>
+        <AddRoast
+        updatePendings={this.updatePendings}
+        />
         <br/>
         <br/>
         <h2>Feed</h2>

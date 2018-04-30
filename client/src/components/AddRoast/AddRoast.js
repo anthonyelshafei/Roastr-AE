@@ -51,8 +51,10 @@ handleFormSubmit = event => {
         roast: this.state.roast
     }
       console.log(roastData)
+      
       API.addRoast(roastData).then(
-      this.setState({recipientName: "", roast: ""})
+      this.setState({recipientName: "", roast: ""}),
+      this.props.updatePendings()
     )
   })
   
