@@ -36,12 +36,14 @@ class Social extends React.Component {
     })
   }
 
+  updatePending = () => {
+    API.getPendings(this.state.userInfo.username).then(res => {
+      this.setState({pendings: res.data})
+    })
+  }
+
   changeRoast = (roast) => {
     this.setState({pendingRoast: roast})
-  }
-  
-  submitResponse = (response) => {
-    console.log(response)
   }
 
   getRoastInfo = (info) => {
