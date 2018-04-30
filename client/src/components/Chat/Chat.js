@@ -5,7 +5,7 @@ var connection = document.URL
 console.log(connection)
 
 if(document.URL === 'http://localhost:3000/main'){
-    connection=3001
+    connection='localhost:3001';
 }
 else{
     connection=document.URL
