@@ -7,6 +7,7 @@ import Social from "../../components/Social";
 import { Route } from "react-router-dom";
 import Worst from "../../components/Worst";
 import Best from "../../components/Best";
+import API from "../../utils/API";
 
 
 
@@ -14,19 +15,28 @@ class Main extends React.Component {
 
   state = {
     center: "feed",
-    userInfo: {}
+    userInfo: {},
+    pendings: []
   }
 
+  updatePendings = () => {
+    API.getPendings(this.state.userInfo.username).then(res => {
+      this.setState({pendings: res.data})
+    })
+  }
 
-//   componentDidMount(){
+  componentDidMount(){
 
-//     axios.get("/api/sessioninfo").then(res => {
-//           this.setState({userInfo: res.data})
-//           if(res.data === ""){
-//             window.location.href = '/'
-//           }
-//       })
-// };
+    axios.get("/api/sessioninfo").then(res => {
+          this.setState({userInfo: res.data})
+          if(res.data === ""){
+            window.location.href = '/'
+          }
+          this.updatePendings()
+      })
+
+      
+};
 
   render() {
     return (
@@ -40,13 +50,15 @@ class Main extends React.Component {
           </div>
 
           <div className="col-sm-12 col-md-8 col-lg-5 col-xl-6">
-            <Route exact path={`${this.props.match.url}`} component={Feed}/>   
+            <Route exact path={`${this.props.match.url}`} render={() => <Feed updatePendings={this.updatePendings} />} />   
             <Route exact path={`${this.props.match.url}/Worst`} component={Worst}/>
             <Route exact path={`${this.props.match.url}/Best`} component={Best}/>
           </div>
 
           <div className="col-sm-12 col-md-12 col-lg-4 offset-lg-0 col-xl-3">
-            <Social />
+            <Social
+            pendings={this.state.pendings}
+             />
           </div>
 
         </div>
