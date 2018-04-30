@@ -43,7 +43,6 @@ server = app.listen(PORT, () =>
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
 );
 
-var app = express();
 
 // socket.io stuff
 
