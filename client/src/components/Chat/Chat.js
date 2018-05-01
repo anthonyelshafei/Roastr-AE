@@ -67,14 +67,14 @@ class Chat extends React.Component{
                                 <div className="messages">
                                     {this.state.messages.map(message => {
                                         return (
-                                            <div className="container">
-                                            <div className="row border-bottom border-danger">
-                                                <div className="col-3 text-left " style={chatImage}> <Userimage image={this.props.image}/></div> 
-                                                <div className="col-9"><small>{message.author}:</small></div>
-                                            </div>
+                                            <div className="row pt-2">
                                             
-                                            <div className="row">
-                                                <div><small>{message.message}</small></div>
+                                                <div className="col-3 mr-3" style={chatImage}> <Userimage image={this.props.image}/></div> 
+                                                <div classname="col-9 text-right"><small>{message.author}:</small></div>
+                                            
+                                            
+                                            <div className="col-12 text-left ml-1 border-bottom mt-0 p-0">
+                                                <div><small><small>{message.message}</small></small></div>
                                             </div>
                                             </div>
                                         )
