@@ -3,19 +3,18 @@ import Userimage from "../Userimage";
 import axios from "axios";
 import Logo from "../Logo";
 
-const imgStyle = {
-  marginTop: "-em",
-  zIndex: -1,
-};
 // style={imgStyle}
+
+const imgStyle = {
+     marginTop: -70,
+     zIndex: -1,
+};
 
 class User extends React.Component {
 
   state = {
     userInfo: {}
   }
-
-  
 
   componentDidMount(){
 
@@ -30,8 +29,8 @@ axios.get("/api/sessioninfo").then(res => {
          <div className="sidebar-header">
          
         <Logo />
-        <div className="col-10 offset-1">
-        <Userimage image={this.state.userInfo.image} style={imgStyle}/>
+        <div className="col-10 offset-1 mb-3" style={imgStyle} > 
+        <Userimage image={this.state.userInfo.image}/>
          </div>
           
           <h2 className = "text-center">{this.state.userInfo.username}</h2>
