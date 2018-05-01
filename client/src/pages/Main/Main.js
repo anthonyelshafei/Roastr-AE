@@ -50,7 +50,7 @@ class Main extends React.Component {
           </div>
 
           <div className="col-sm-12 col-md-8 col-lg-5 col-xl-6">
-            <Route exact path={`${this.props.match.url}`} render={() => <Feed updatePendings={this.updatePendings} />} />   
+            <Route exact path={`${this.props.match.url}`} render={() => <Feed updatePendings={this.updatePendings} userInfo={this.state.userInfo}/>} />   
             <Route exact path={`${this.props.match.url}/Worst`} component={Worst}/>
             <Route exact path={`${this.props.match.url}/Best`} component={Best}/>
           </div>

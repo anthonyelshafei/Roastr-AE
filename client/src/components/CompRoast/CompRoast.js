@@ -15,14 +15,85 @@ class CompRoast extends React.Component {
     }
 
     componentDidMount() {
+        
         API.getRoast(this.props.id).then(res => {
-            this.setState({roastrScore: res.data.roastrScore, recipientScore: res.data.recipientScore})
+            this.setState({roastrScore: res.data.roastScore, recipientScore: res.data.replyScore})
         })
     }
 
-    roastRoastr = () => {
+    roastRoastr = (event) => {
+        var checked = false;
+        event.preventDefault()
+        API.getRoast(this.props.id).then(res => {
+            
+            for(var i = 0; i < res.data.voters.length; i++){
+                if(res.data.voters[i] === this.props.username && checked === false){
+
+                    alert("You already voted!")
+                    
+                    checked = true
+                }
+            }
+            }).then(() => {
+                if(checked===false){
+                API.getRoast(this.props.id).then(res => { 
+                   var newScore = res.data.roastrScore
+                   newScore = newScore + 1
+                   var newVoters = res.data.voters
+                   newVoters.push(this.props.username)
+
+                   var roastData = {
+                     roastScore: newScore,
+                     voters: newVoters  
+                   }
+
+                   API.updateRoast(roastData, this.props.id).then(() =>{
+                        this.setState({roastrScore: newScore})
+                   })
+                })
+            };
+            
+        })
+      };
+      
+      roastRecipient = (event) => {
+        var checked = false;
+        event.preventDefault()
+        API.getRoast(this.props.id).then(res => {
+            
+            for(var i = 0; i < res.data.voters.length; i++){
+                if(res.data.voters[i] === this.props.username && checked === false){
+
+                    alert("You already voted!")
+                    
+                    checked = true
+                }
+            }
+            }).then(() => {
+                if(checked===false){
+                API.getRoast(this.props.id).then(res => { 
+                   var newScore = res.data.replyScore
+                   newScore = newScore + 1
+                   var newVoters = res.data.voters
+                   newVoters.push(this.props.username)
+
+                   var roastData = {
+                     replyScore: newScore,
+                     voters: newVoters  
+                   }
+
+                   API.updateRoast(roastData, this.props.id).then(() =>{
+                        this.setState({recipientScore: newScore})
+                   })
+                })
+            };
+            
+        })
+      };
         
-    }
+            
+        
+    
 
     render() {
         return ( 
@@ -37,7 +108,7 @@ class CompRoast extends React.Component {
                     </div>
                     
                     <div className="d-flex my-auto">
-                        {this.props.roastrName} | {this.props.recipientName}
+                        {this.props.roastrName} VS {this.props.recipientName}
                     </div>
                     
                     <div style={imgStyle} className="d-flex mr-auto ml-3">
@@ -60,8 +131,8 @@ class CompRoast extends React.Component {
                 </div>
                 
                 <div className="card-footer text-muted">
-                    <button className="btn col-5 mr-3">{this.props.roastrName}</button>
-                    <button className="btn col-5 ml-3">{this.props.recipientName}</button>
+                    <button className="btn col-5 mr-3" onClick={this.roastRoastr}><strong>{this.state.roastrScore}</strong></button>
+                    <button className="btn col-5 ml-3" onClick={this.roastRecipient}><strong>{this.state.recipientScore}</strong></button>
                     <span> Vote on who got roasted</span>
                 </div>
             </div>

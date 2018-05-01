@@ -2,6 +2,7 @@ import React from "react";
 import AddRoast from "../AddRoast";
 import API from "../../utils/API";
 import CompRoast from "../CompRoast/CompRoast";
+// import { userInfo } from "os";
  
  
  class Feed extends React.Component {
@@ -42,6 +43,7 @@ import CompRoast from "../CompRoast/CompRoast";
         recipientImage={item.recipientImage}
         roast={item.roast}
         reply={item.reply}
+        username={this.props.userInfo.username}
        />
       ))}
         <br/>

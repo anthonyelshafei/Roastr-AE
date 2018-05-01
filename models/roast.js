@@ -18,7 +18,7 @@ const roastSchema = new Schema({
   replyScore: { type: Number, default: 0},
   date: { type: Date, default: localDate },
   replied: {type: Boolean, default: false},
-  voters: {type: Array, default: [] }
+  voters: {type: Array, default: ["dummy-data12345"] }
 });
 
 const Roast = mongoose.model("Roast", roastSchema);

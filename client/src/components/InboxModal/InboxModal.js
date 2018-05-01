@@ -34,7 +34,7 @@ import React from "react";
          console.log(this.props.roastId)
          var RoastData = {
            reply: this.state.textbody,
-            replied: true
+           replied: true
          }
 
         API.updateRoast(RoastData, this.props.roastId).then(() =>{
