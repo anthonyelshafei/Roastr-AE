@@ -35,12 +35,13 @@ import CompRoast from "../CompRoast/CompRoast";
         <h2>Feed</h2>
       {this.state.completeRoasts.map(item => (
         <CompRoast
+        id={item._id}
         roastrName={item.roastrName}
         recipientName={item.recipientName}
         roastrImage={item.roastrImage}
         recipientImage={item.recipientImage}
         roast={item.roast}
-         reply={item.reply}
+        reply={item.reply}
        />
       ))}
         <br/>
