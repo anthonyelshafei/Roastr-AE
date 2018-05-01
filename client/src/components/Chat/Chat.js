@@ -70,11 +70,11 @@ class Chat extends React.Component{
                                             <div className="row pt-2">
                                             
                                                 <div className="col-3 mr-3" style={chatImage}> <Userimage image={this.props.image}/></div> 
-                                                <div classname="col-9 text-right"><small>{message.author}:</small></div>
+                                                <div classname="col-9 text-right">{message.author}: </div>
                                             
                                             
                                             <div className="col-12 text-left ml-1 border-bottom mt-0 p-0">
-                                                <div><small><small>{message.message}</small></small></div>
+                                                <div><small>{message.message}</small></div>
                                             </div>
                                             </div>
                                         )
