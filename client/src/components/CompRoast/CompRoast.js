@@ -37,18 +37,18 @@ class CompRoast extends React.Component {
             }).then(() => {
                 if(checked===false){
                 API.getRoast(this.props.id).then(res => { 
-                   var newScore = res.data.roastrScore
-                   newScore = newScore + 1
+                   var newroastScore = res.data.roastrScore
+                   newroastScore = this.state.roastrScore + 1
                    var newVoters = res.data.voters
                    newVoters.push(this.props.username)
 
                    var roastData = {
-                     roastScore: newScore,
+                     roastScore: newroastScore,
                      voters: newVoters  
                    }
 
                    API.updateRoast(roastData, this.props.id).then(() =>{
-                        this.setState({roastrScore: newScore})
+                        this.setState({roastrScore: newroastScore})
                    })
                 })
             };
@@ -72,18 +72,18 @@ class CompRoast extends React.Component {
             }).then(() => {
                 if(checked===false){
                 API.getRoast(this.props.id).then(res => { 
-                   var newScore = res.data.replyScore;
-                   newScore = newScore + 1
+                   var newreplyScore = res.data.replyScore;
+                   newreplyScore = this.state.replyScore + 1
                    var newVoters = res.data.voters
                    newVoters.push(this.props.username)
 
                    var roastData = {
-                     replyScore: newScore,
+                     replyScore: newreplyScore,
                      voters: newVoters  
                    }
 
                    API.updateRoast(roastData, this.props.id).then(() =>{
-                        this.setState({recipientScore: newScore})
+                        this.setState({recipientScore: newreplyScore})
                    })
                 })
             };
