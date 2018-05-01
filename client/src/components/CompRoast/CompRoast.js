@@ -54,15 +54,15 @@ class CompRoast extends React.Component {
                         {this.props.roast}
                     </div>
                     
-                    <div className="col">
+                    <div className="col border-left">
                         {this.props.reply}
                     </div>
                 </div>
                 
 
-                <div className="card-footer text-muted">
-                    <button className="btn col-5 mr-3">{this.props.roastrName}</button>
-                    <button className="btn col-5 ml-3">{this.props.recipientName}</button>
+                <div className="text-muted">
+                    <button className="btn col-5 border-right border-dark mx-2">{this.props.roastrName}</button>
+                    <button className="btn col-5 border-left border-dark mx-2">{this.props.recipientName}</button>
                     <p> Vote on who got roasted</p>
                 </div>
             </div>

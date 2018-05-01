@@ -17,7 +17,7 @@ const Pending = function(props) {
       <div className="row border-bottom justify-content-between p-1">
         
         <div>
-            <button type="button" class="btn btn-primary mt-1" data-toggle="modal" onClick={()=>props.changeRoast(props.roast)} data-target="#pendingModal">View</button>
+            <button type="button" className="btn btn-primary mt-1" data-toggle="modal" onClick={()=>props.changeRoast(props.roast)} data-target="#pendingModal">View</button>
             
         </div>
 
