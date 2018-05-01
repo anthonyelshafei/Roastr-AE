@@ -28,7 +28,7 @@ class NavTabs extends React.Component {
             </li>
           </ul>
 
-            <input className="roastrLink" onClick={this.myFunction} id="myInput" type="text" value="https://roastr-test.herokuapp.com/"/>
+            <input className="roastrLink col-12 col-xs-12 col-lg-1 py-2 mr-3 mr-0 text-center" onClick={this.myFunction} id="myInput" type="text" value="https://roastr-test.herokuapp.com/"/>
 
           <div className="col-12 col-xs-12 col-lg-1 py-2 mr-3 mr-0 text-center"><Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>GTFO</Link></div>
         </div>
