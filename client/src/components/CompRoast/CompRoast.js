@@ -72,7 +72,7 @@ class CompRoast extends React.Component {
             }).then(() => {
                 if(checked===false){
                 API.getRoast(this.props.id).then(res => { 
-                   var newScore = res.data.replyScore
+                   var newScore = res.data.replyScore;
                    newScore = newScore + 1
                    var newVoters = res.data.voters
                    newVoters.push(this.props.username)
