@@ -47,6 +47,12 @@ import React from "react";
    changeRoast = (roast) => {
      this.setState({pendingRoast: roast})
    }
+
+   deleteRoast = (id) => {
+    API.deleteRoast(id).then(()=>{
+      this.updateInbox()
+    })
+   }
    
    submitResponse = (response) => {
      console.log(response)
@@ -81,6 +87,7 @@ import React from "react";
                  id={item._id}
                  date={item.date}
                  getRoastInfo={this.getRoastInfo}
+                 deleteRoast={this.deleteRoast}
                  roastrImage={item.roastrImage}
                  />
 
