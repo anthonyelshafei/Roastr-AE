@@ -7,9 +7,16 @@ import API from "../../utils/API";
 class Login extends React.Component {
 
     state = {
+      userCount: [],
       username: "",
       password: ""
     }
+
+    componentDidMount(){
+        API.getUsers().then(res => {
+          this.setState({userCount: res.data})
+        })
+      }
 
    handleInputChange = event => {
     let value = event.target.value;
@@ -59,7 +66,7 @@ class Login extends React.Component {
                         className="grad1"
                         >Login</button>
                         <br/><br/>
-                        <h3 id="linkz"><a href="/signup">New to Roastr?</a></h3>
+                        <h3 id="linkz"><a href="/signup">New to Roastr? Join {this.state.userCount.length} roastrs!</a></h3>
                     </form>
                 </div>
             </Fragment>
