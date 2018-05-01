@@ -1,44 +1,50 @@
 import React from "react";
+import AddRoast from "../AddRoast";
+import API from "../../utils/API";
+import CompRoast from "../CompRoast/CompRoast";
+// import { userInfo } from "os";
+ 
+ class Best extends React.Component {
 
+  state = {
+    completeRoasts: [],
+    pendings: []
+  }
 
-class Best extends React.Component {
+  componentDidMount(){
+    API.getRoasts().then(res => {
+      this.setState({completeRoasts: res.data})
+    })
+  }
+  
+  updatePendings = () => {
+    this.props.updatePendings()
+  } 
+
   render() {
     return (
-      <div className="px-3">
-      <h2>This is the best</h2>
-      <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+      <div id="feed" className="container-fluid">
+        <h2>Best</h2>
+      {this.state.completeRoasts
+      .sort((a, b) => a.roastScore + a.replyScore < b.roastScore + b.replyScore )
+      .map(item => (
+        <CompRoast
+        id={item._id}
+        roastrName={item.roastrName}
+        recipientName={item.recipientName}
+        roastrImage={item.roastrImage}
+        recipientImage={item.recipientImage}
+        roast={item.roast}
+        reply={item.reply}
+        username={this.props.userInfo.username}
+        roastScore={this.props.roastScore}
+        replyScore={this.props.replyScore}
+       />
+      ))}
+        <br/>
       </div>
     )
   }
-}
-
-export default Best;
+ }
+ 
+ export default Best;
