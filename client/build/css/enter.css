@@ -1,6 +1,7 @@
 /* most styles borrowed from
 https://codepen.io/Lewitje/pen/BNNJjo?q=login&order=popularity&depth=everything&show_forks=false
 */
+
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 * {
   -webkit-box-sizing: border-box;
@@ -65,7 +66,7 @@ form input {
   font-weight: 300;
 }
 form input:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 form input:focus {
   width: 300px;
