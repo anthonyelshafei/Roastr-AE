@@ -10,14 +10,14 @@ const imgStyle = {
 class CompRoast extends React.Component {
 
     state= {
-      roastrScore: 0,
-      recipientScore: 0
+      roastScore: 0,
+      replyScore: 0
     }
 
     componentDidMount() {
         
         API.getRoast(this.props.id).then(res => {
-            this.setState({roastrScore: res.data.roastScore, recipientScore: res.data.replyScore})
+            this.setState({roastScore: res.data.roastScore, replyScore: res.data.replyScore})
         })
     }
 
@@ -37,8 +37,8 @@ class CompRoast extends React.Component {
             }).then(() => {
                 if(checked===false){
                 API.getRoast(this.props.id).then(res => { 
-                   var newroastScore = res.data.roastrScore
-                   newroastScore = this.state.roastrScore + 1
+                   var newroastScore = res.data.roastScore
+                   newroastScore = this.state.roastScore + 1
                    var newVoters = res.data.voters
                    newVoters.push(this.props.username)
 
@@ -48,7 +48,7 @@ class CompRoast extends React.Component {
                    }
 
                    API.updateRoast(roastData, this.props.id).then(() =>{
-                        this.setState({roastrScore: newroastScore})
+                        this.setState({roastScore: newroastScore})
                    })
                 })
             };
@@ -83,7 +83,7 @@ class CompRoast extends React.Component {
                    }
 
                    API.updateRoast(roastData, this.props.id).then(() =>{
-                        this.setState({recipientScore: newreplyScore})
+                        this.setState({replyScore: newreplyScore})
                    })
                 })
             };
@@ -131,8 +131,8 @@ class CompRoast extends React.Component {
                 </div>
                 
                 <div className="text-muted">
-                    <button className="btn col-5 border-right border-dark mx-2" onClick={this.roastRoastr}><strong>{this.state.roastrScore}</strong></button>
-                    <button className="btn col-5 border-left border-dark mx-2" onClick={this.roastRecipient}><strong>{this.state.recipientScore}</strong></button>
+                    <button className="btn col-5 border-right border-dark mx-2" onClick={this.roastRoastr}><strong>{this.state.roastScore}</strong></button>
+                    <button className="btn col-5 border-left border-dark mx-2" onClick={this.roastRecipient}><strong>{this.state.replyScore}</strong></button>
                     <p> Vote on who got roasted</p>
                 </div>
             </div>
