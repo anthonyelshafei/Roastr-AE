@@ -7,7 +7,7 @@ class SignUp extends React.Component {
     state = {
       username: "",
       password: "",
-      image: "https://i.pinimg.com/originals/60/b9/33/60b9330cadbe2dbef2c0e4d641f652b7.gif"
+      image: ""
     }
 
     handleInputChange = event => {
@@ -55,7 +55,7 @@ class SignUp extends React.Component {
                     <input name="password" onChange={this.handleInputChange} value={this.state.password} type="password" placeholder="Password" required/>
                     <input id="imgName" name="image" onChange={this.handleInputChange} value={this.state.image} type="text" placeholder="Web Image URL" required/>
                     <div id="imageHolderHolder" className="row">
-                            <img name="imageHolder" id="imageHolder" src="https://i.pinimg.com/originals/60/b9/33/60b9330cadbe2dbef2c0e4d641f652b7.gif"/>
+                            <img name="imageHolder" id="imageHolder" src="http://ebus.ca/wp-content/uploads/2017/08/profile-placeholder.jpg"/>
                     </div>
                     <button id="signup-button" className="grad1" type="submit">Sign Up</button><br/><br/>
                     <h3 id="linkz"><a href="/">Already a member?</a></h3>
