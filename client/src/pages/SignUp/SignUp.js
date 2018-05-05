@@ -7,7 +7,7 @@ class SignUp extends React.Component {
     state = {
       username: "",
       password: "",
-      image: ""
+      image: "https://i.pinimg.com/originals/60/b9/33/60b9330cadbe2dbef2c0e4d641f652b7.gif"
     }
 
     handleInputChange = event => {
@@ -23,28 +23,26 @@ class SignUp extends React.Component {
         })
        };
 
-       
-
        handleFormSubmit = event => {
-        event.preventDefault();
 
-        var userData = {
-          username: this.state.username,
-          password: this.state.password,
-          image: this.state.image
-        }
+            event.preventDefault();
 
-        API.getByName(this.state.username).then( res => {
-            if(res.data){
-                alert("Username is taken, please choose a different one.")
-                this.setState({username: ""})
+            var userData = {
+                username: this.state.username,
+                password: this.state.password,
+                image: this.state.image
             }
-            else{
-                API.addUser(userData)
-                window.location.href = '/main';
-            }
-        });
-        
+
+            API.getByName(this.state.username).then( res => {
+                if(res.data){
+                    alert("Username is taken, please choose a different one.")
+                    this.setState({username: ""})
+                }
+                else{
+                    API.addUser(userData)
+                    window.location.href = '/main';
+                }
+            });
         };
 
     render() {
@@ -55,7 +53,10 @@ class SignUp extends React.Component {
                 <form className="form" id="signup" onSubmit={this.handleFormSubmit}>
                     <input name="username" onChange={this.handleInputChange} value={this.state.username} type="text" placeholder="Username" required/>
                     <input name="password" onChange={this.handleInputChange} value={this.state.password} type="password" placeholder="Password" required/>
-                    <input id="imgName" name="image" onChange={this.handleInputChange} value={this.state.image} type="text" placeholder="Web Image URL"/>
+                    <input id="imgName" name="image" onChange={this.handleInputChange} value={this.state.image} type="text" placeholder="Web Image URL" required/>
+                    <div id="imageHolderHolder" className="row">
+                            <img name="imageHolder" id="imageHolder" src="https://i.pinimg.com/originals/60/b9/33/60b9330cadbe2dbef2c0e4d641f652b7.gif"/>
+                    </div>
                     <button id="signup-button" className="grad1" type="submit">Sign Up</button><br/><br/>
                     <h3 id="linkz"><a href="/">Already a member?</a></h3>
                 </form>

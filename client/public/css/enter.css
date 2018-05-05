@@ -3,6 +3,21 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   background-image: none !important;
   color: white !important;
 }
+#imageHolderHolder {
+margin: 0 auto;
+width: 250px;
+text-align: center;
+padding: 10px 15px;
+}
+
+#imageHolder {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 50%;
+  border: solid 2px #f44d2f;
+}
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 * {
@@ -67,6 +82,26 @@ form input {
           transition-duration: 0.25s;
   font-weight: 300;
 }
+
+form input::after {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+  outline: 0;
+  border: 1px solid rgba(45,48,53, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  font-weight: 300;
+}
+
 form input:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
