@@ -56,7 +56,6 @@ class SignUp extends React.Component {
                     <input name="username" onChange={this.handleInputChange} value={this.state.username} type="text" placeholder="Username" required/>
                     <input name="password" onChange={this.handleInputChange} value={this.state.password} type="password" placeholder="Password" required/>
                     <input id="imgName" name="image" onChange={this.handleInputChange} value={this.state.image} type="text" placeholder="Web Image URL"/>
-                    <img name="imageHolder" id="imageHolder"/><br/><br/>
                     <button id="signup-button" className="grad1" type="submit">Sign Up</button><br/><br/>
                     <h3 id="linkz"><a href="/">Already a member?</a></h3>
                 </form>
