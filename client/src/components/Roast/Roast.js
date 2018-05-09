@@ -25,6 +25,7 @@ class Roast extends React.Component {
         <button>Vote</button>
         <p>{replyScore}</p>
         <button>Vote</button>
+        <button>Comment</button>
       </div>
     );
   }
