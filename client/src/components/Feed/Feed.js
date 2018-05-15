@@ -34,7 +34,8 @@ import CompRoast from "../CompRoast/CompRoast";
         <br/>
         <br/>
         <h2>Feed</h2>
-      {this.state.completeRoasts.map(item => (
+      {this.state.completeRoasts
+        .sort((a, b) => a._id < b._id).map(item => (
         <CompRoast
         id={item._id}
         roastrName={item.roastrName}

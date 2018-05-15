@@ -49,6 +49,7 @@ class Chat extends React.Component{
             ev.preventDefault();
             this.socket.emit('SEND_MESSAGE', {
                 author: this.props.username,
+                authorImage: this.props.image,
                 message: this.state.message
             })
             this.setState({message: ''});
@@ -69,7 +70,7 @@ class Chat extends React.Component{
                                         return (
                                             <div className="row pt-2">
                                             
-                                                <div className="col-3 mr-1 p-0" style={chatImage}> <Userimage image={this.props.image}/></div> 
+                                                <div className="col-3 mr-1 p-0" style={chatImage}> <Userimage image={message.authorImage}/></div> 
                                                 
                                                 <div classname="col-9 text-right">{message.author}: </div>
                                             
