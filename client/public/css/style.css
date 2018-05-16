@@ -437,11 +437,10 @@ table a:hover {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #f44d2f;
+	background: transparent;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: gold;
-	border-radius: 1px
+	background: transparent;
 }

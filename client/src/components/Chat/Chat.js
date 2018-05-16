@@ -64,7 +64,6 @@ class Chat extends React.Component{
                     <div className="col-12">
                         <div lassName="p-0">
                             <div className="card-body">
-                                <div className="card-title"><h2>Global Chat</h2></div>
                                 <hr/>
                                 <div className="messages">
                                     {this.state.messages.map(message => {
