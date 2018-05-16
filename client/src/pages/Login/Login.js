@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Logo from "../../components/Logo";
 import API from "../../utils/API";
-
+import axios from "axios";
 
 
 class Login extends React.Component {
@@ -16,7 +16,13 @@ class Login extends React.Component {
         API.getUsers().then(res => {
           this.setState({userCount: res.data})
         })
-      }
+
+        axios.delete("/api/sessioninfo")
+
+        axios.get("/api/sessioninfo").then(res => {
+    
+        })
+      };
 
    handleInputChange = event => {
     let value = event.target.value;
@@ -29,7 +35,7 @@ class Login extends React.Component {
     this.setState({
         [name]: value
     })
-    };
+};
 
     handleFormSubmit = event => {
         event.preventDefault();
@@ -66,7 +72,7 @@ class Login extends React.Component {
                         className="grad1"
                         >Login</button>
                         <br/><br/>
-                        <h3 id="linkz"><a href="/signup">New to Roastr? Join {this.state.userCount.length} roastrs!</a></h3>
+                        <h3 id="linkz"><a href="/signup">New to Roastr? Join {this.state.userCount.length} other active users!</a></h3>
                     </form>
                 </div>
             </Fragment>

@@ -68,7 +68,7 @@ import Chat from "../Chat";
      <div className="px-3">
        <h2>Social</h2>
        <div id="accordion">
-         <div >
+         <div className="card">
            <div className="card-header p-0" id="headingOne">
              
                <button className="btn btn-link col-12 col-12" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -101,7 +101,7 @@ import Chat from "../Chat";
            </div>
          </div>
  
-         <div >
+         <div className="card">
            <div className="card-header p-0" id="headingTwo">
              <h5 className="mb-0">
                <button className="btn btn-link col-12 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -132,7 +132,7 @@ import Chat from "../Chat";
            </div>
          </div>
          
-         <div >
+         <div className="card">
            <div className="card-header p-0" id="headingThree">
              <h5 className="mb-0">
                <button className="btn btn-link col-12 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">

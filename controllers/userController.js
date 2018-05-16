@@ -44,8 +44,7 @@ module.exports = {
       password: req.body.password,
       image: req.body.image,
       score: 0
-   
-    };
+   }
     db.User
       .create(user)
       .then(dbUser => {
@@ -54,12 +53,14 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
   },
+
   update: function(req, res) {
     db.User
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ username: req.params.username }, req.body)
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
+
   remove: function(req, res) {
     db.User
       .findById({ _id: req.params.id })

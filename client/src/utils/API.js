@@ -27,6 +27,10 @@ export default {
         return axios.get("/api/users");
     },
 
+    updateUser: function(userData, username) {
+        return axios.put(`/api/users/user/${username}`, userData);
+    },
+
     // Adds an roast to the database
     addRoast: function(roastData) {
         return axios.post("/api/roasts", roastData);

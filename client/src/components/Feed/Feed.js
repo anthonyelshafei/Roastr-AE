@@ -48,7 +48,6 @@ import CompRoast from "../CompRoast/CompRoast";
        />
       ))}
         <br/>
-        <CompRoast/>
       </div>
     )
   }

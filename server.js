@@ -16,6 +16,7 @@ app.get("/api/sessioninfo", function(req, res){
   res.json(req.session.user)
 })
 
+app.delete("/api/sessioninfo")
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));

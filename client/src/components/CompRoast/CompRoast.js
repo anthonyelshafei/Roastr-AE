@@ -8,13 +8,14 @@ const imgStyle = {
     width: 50,
   };
 
+
 class CompRoast extends React.Component {
 
     state= {
       roastScore: 0,
       replyScore: 0,
       roastrScore: 88,
-      recipientScore: 88,
+      recipientScore: 44,
       voted: false
     }
 
@@ -25,7 +26,7 @@ class CompRoast extends React.Component {
         })
 
         API.getByName(this.props.recipientName).then(res => {
-            this.setState({roastrScore: res.data.score})
+            this.setState({recipientScore: res.data.score})
         })
         
         API.getRoast(this.props.id).then(res => {
@@ -73,6 +74,21 @@ class CompRoast extends React.Component {
                         this.setState({roastScore: newroastScore})
                         this.setState({voted: true})
                    })
+
+                   var userData = {
+                       score: 0
+                   }
+
+                   API.getByName(this.props.roastrName).then(res => {
+                    userData.score = res.data.score
+                }).then(()=>{
+                    userData.score += 1
+                    API.updateUser(userData, this.props.roastrName).then(()=>{
+                        this.setState({roastrScore: userData.score})
+                    })
+                });
+
+                   
                 })
             };
             
@@ -109,6 +125,19 @@ class CompRoast extends React.Component {
                         this.setState({replyScore: newreplyScore})
                         this.setState({voted: true})
                    })
+
+                   var userData = {
+                    score: 0
+                }
+
+                API.getByName(this.props.recipientName).then(res => {
+                 userData.score = res.data.score
+                }).then(()=>{
+                 userData.score += 1
+                 API.updateUser(userData, this.props.recipientName).then(()=>{
+                     this.setState({recipientScore: userData.score})
+                 })
+             });
                 })
             };
             
@@ -125,7 +154,7 @@ class CompRoast extends React.Component {
 
             <div className="card text-center mb-3">
                 <div className="card-header row text-center justify-content-center mx-auto">
-                <span class="badge badge-pill badge-warning mr-0 align-middle align-self-center">Score</span>
+                <span class="badge badge-pill badge-warning mr-0 align-middle align-self-center">{this.state.roastrScore}</span>
 
                     <div style={imgStyle} className='ml-3'>
 
@@ -143,7 +172,7 @@ class CompRoast extends React.Component {
                         image={this.props.recipientImage}
                          />
                     </div>
-                <span class="badge badge-pill badge-warning mr-0 align-middle align-self-center">Score</span>
+                <span class="badge badge-pill badge-warning mr-0 align-middle align-self-center">{this.state.recipientScore}</span>
 
 
                 </div>
@@ -161,9 +190,6 @@ class CompRoast extends React.Component {
                 
                 <div className="text-muted">
 
-                    <button className="btn col-5 border-right border-dark mx-2" onClick={this.roastRoastr}><strong>{this.state.roastScore}</strong></button>
-                    <button className="btn col-5 border-left border-dark mx-2" onClick={this.roastRecipient}><strong>{this.state.replyScore}</strong></button>
-                    <p>Vote</p>
 
                     {this.state.voted === false? (
                         <div>
@@ -178,23 +204,7 @@ class CompRoast extends React.Component {
                     )
                 }
                     <p>Vote</p>
-</div>
-
-            <div className='accordion'>
-                <div className="card-header p-0" id="headingFour">
-                    <h5 className="mb-0">
-                    <button className="btn col-11 mb-4 btn-primary form-control collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Comments
-                    </button>
-                    </h5>
-
                 </div>
-                <div id="collapseFour" className="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                    <div className="card-body">
-                    <Comments/>
-                    </div>
-                </div>
-            </div>
 
             </div>
             
