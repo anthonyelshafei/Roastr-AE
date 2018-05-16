@@ -12,17 +12,38 @@ class CompRoast extends React.Component {
 
     state= {
       roastScore: 0,
-      replyScore: 0
+      replyScore: 0,
+      roastrScore: 88,
+      recipientScore: 88,
+      voted: false
     }
 
     componentDidMount() {
+
+        API.getByName(this.props.roastrName).then(res => {
+            this.setState({roastrScore: res.data.score})
+        })
+
+        API.getByName(this.props.recipientName).then(res => {
+            this.setState({roastrScore: res.data.score})
+        })
         
         API.getRoast(this.props.id).then(res => {
             this.setState({roastScore: res.data.roastScore, replyScore: res.data.replyScore})
         })
-    }
 
-    roastRoastr = (event) => {
+        API.getRoast(this.props.id).then(res => {
+            
+            for(var i = 0; i < res.data.voters.length; i++){
+                if(res.data.voters[i] === this.props.username){
+                    this.setState({voted: true})
+                    
+                }
+            }
+        })
+    };
+
+    voteRoastr = (event) => {
         var checked = false;
         event.preventDefault()
         API.getRoast(this.props.id).then(res => {
@@ -50,6 +71,7 @@ class CompRoast extends React.Component {
 
                    API.updateRoast(roastData, this.props.id).then(() =>{
                         this.setState({roastScore: newroastScore})
+                        this.setState({voted: true})
                    })
                 })
             };
@@ -57,7 +79,7 @@ class CompRoast extends React.Component {
         })
       };
       
-      roastRecipient = (event) => {
+      voteRecipient = (event) => {
         var checked = false;
         event.preventDefault()
         API.getRoast(this.props.id).then(res => {
@@ -85,6 +107,7 @@ class CompRoast extends React.Component {
 
                    API.updateRoast(roastData, this.props.id).then(() =>{
                         this.setState({replyScore: newreplyScore})
+                        this.setState({voted: true})
                    })
                 })
             };
@@ -99,11 +122,13 @@ class CompRoast extends React.Component {
     render() {
         return ( 
             
+
             <div className="card text-center mb-3">
                 <div className="card-header row text-center justify-content-center mx-auto">
                 <span class="badge badge-pill badge-warning mr-0 align-middle align-self-center">Score</span>
 
                     <div style={imgStyle} className='ml-3'>
+
                         <Userimage
                         image={this.props.roastrImage}
                          />
@@ -135,10 +160,25 @@ class CompRoast extends React.Component {
                 </div>
                 
                 <div className="text-muted">
+
                     <button className="btn col-5 border-right border-dark mx-2" onClick={this.roastRoastr}><strong>{this.state.roastScore}</strong></button>
                     <button className="btn col-5 border-left border-dark mx-2" onClick={this.roastRecipient}><strong>{this.state.replyScore}</strong></button>
                     <p>Vote</p>
-                </div>
+
+                    {this.state.voted === false? (
+                        <div>
+                        <button className="btn col-5 border-right border-dark mx-2"  onClick={this.voteRoastr}><strong>{this.state.roastScore}</strong></button>
+                        <button className="btn col-5 border-left border-dark mx-2"  onClick={this.voteRecipient}><strong>{this.state.replyScore}</strong></button>
+                        </div>
+                    ) : (
+                        <div>
+                        <button className="btn col-5 border-right border-dark mx-2"  onClick={this.voteRoastr} disabled><strong>{this.state.roastScore}</strong></button>
+                        <button className="btn col-5 border-left border-dark mx-2"  onClick={this.voteRecipient} disabled><strong>{this.state.replyScore}</strong></button>
+                        </div>
+                    )
+                }
+                    <p>Vote</p>
+</div>
 
             <div className='accordion'>
                 <div className="card-header p-0" id="headingFour">
@@ -147,6 +187,7 @@ class CompRoast extends React.Component {
                         Comments
                     </button>
                     </h5>
+
                 </div>
                 <div id="collapseFour" className="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                     <div className="card-body">
