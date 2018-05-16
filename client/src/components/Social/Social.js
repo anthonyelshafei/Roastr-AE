@@ -1,11 +1,11 @@
 import React from "react";
- import axios from "axios";
- import API from "../../utils/API";
- import Pending from "../Pending";
- import Inbox from "../Inbox";
- import Modal from "../Modal";
- import InboxModal from "../InboxModal";
- import Chat from "../Chat";
+import axios from "axios";
+import API from "../../utils/API";
+import Pending from "../Pending";
+import Inbox from "../Inbox";
+import Modal from "../Modal";
+import InboxModal from "../InboxModal";
+import Chat from "../Chat";
  
  class Social extends React.Component {
  

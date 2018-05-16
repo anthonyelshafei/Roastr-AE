@@ -1,6 +1,7 @@
 import React from 'react';
 import Userimage from "../Userimage";
 import API from "../../utils/API";
+import Comments from "../Comments";
 
 const imgStyle = {
     height: 50,
@@ -136,36 +137,23 @@ class CompRoast extends React.Component {
                 <div className="text-muted">
                     <button className="btn col-5 border-right border-dark mx-2" onClick={this.roastRoastr}><strong>{this.state.roastScore}</strong></button>
                     <button className="btn col-5 border-left border-dark mx-2" onClick={this.roastRecipient}><strong>{this.state.replyScore}</strong></button>
-                    <p> Vote on who got roasted</p>
+                    <p>Vote</p>
                 </div>
 
-                <div id="accordion">
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-
-                            <button onClick={this.sendMessage} data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" className="btn btn-primary form-control"><img src="https://i.imgur.com/keUwOqg.png" heigt="16px"/></button>
-
-                        </h5>
-                        </div>
-
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-
-
-                            !!!!!!!!!!!!!comment cards go here!!!!!!!!!!!!!!!
-                            !!!!!!!!!!!!!comment cards go here!!!!!!!!!!!!!!!
-                            !!!!!!!!!!!!!comment cards go here!!!!!!!!!!!!!!!
-                            !!!!!!!!!!!!!comment cards go here!!!!!!!!!!!!!!!
-                            !!!!!!!!!!!!!comment cards go here!!!!!!!!!!!!!!!
-                            
-
-
-
-                        </div>
-                        </div>
+            <div className='accordion'>
+                <div className="card-header p-0" id="headingFour">
+                    <h5 className="mb-0">
+                    <button className="btn col-12 collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Comments
+                    </button>
+                    </h5>
+                </div>
+                <div id="collapseFour" className="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div className="card-body">
+                    <Comments/>
                     </div>
                 </div>
+            </div>
 
             </div>
             

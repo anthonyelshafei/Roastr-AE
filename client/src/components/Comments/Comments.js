@@ -19,7 +19,7 @@ else{
     connection=window.location.host;
 }
 
-class Chat extends React.Component{
+class Comments extends React.Component{
 
     
 
@@ -64,7 +64,6 @@ class Chat extends React.Component{
                     <div className="col-12">
                         <div lassName="p-0">
                             <div className="card-body">
-                                <div className="card-title"><h2>Global Chat</h2></div>
                                 <hr/>
                                 <div className="messages">
                                     {this.state.messages.map(message => {
@@ -99,4 +98,4 @@ class Chat extends React.Component{
     }
 }
 
-export default Chat;
+export default Comments;
