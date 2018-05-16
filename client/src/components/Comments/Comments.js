@@ -19,7 +19,7 @@ else{
     connection=window.location.host;
 }
 
-class Chat extends React.Component{
+class Comments extends React.Component{
 
     
 
@@ -98,4 +98,4 @@ class Chat extends React.Component{
     }
 }
 
-export default Chat;
+export default Comments;

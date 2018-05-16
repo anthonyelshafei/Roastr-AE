@@ -1,6 +1,7 @@
 import React from 'react';
 import Userimage from "../Userimage";
 import API from "../../utils/API";
+import Comments from "../Comments";
 
 const imgStyle = {
     height: 50,
@@ -121,24 +122,29 @@ class CompRoast extends React.Component {
     render() {
         return ( 
             
-            <div className="card text-center mb-3" key={this.state.voted}>
-                <div className="card-header row text-center justify-content-between">
-                    
-                    <div style={imgStyle} className="d-flex ml-auto mr-3">
+
+            <div className="card text-center mb-3">
+                <div className="card-header row text-center justify-content-center mx-auto">
+                <span class="badge badge-pill badge-warning mr-0 align-middle align-self-center">Score</span>
+
+                    <div style={imgStyle} className='ml-3'>
+
                         <Userimage
                         image={this.props.roastrImage}
                          />
                     </div>
                     
-                    <div className="d-flex my-auto">
+                    <div className="d-flex align-self-center mx-3">
                         {this.props.roastrName} VS {this.props.recipientName}
                     </div>
                     
-                    <div style={imgStyle} className="d-flex mr-auto ml-3">
+                    <div style={imgStyle} className='mr-3'>
                         <Userimage
                         image={this.props.recipientImage}
                          />
                     </div>
+                <span class="badge badge-pill badge-warning mr-0 align-middle align-self-center">Score</span>
+
 
                 </div>
                 
@@ -154,6 +160,11 @@ class CompRoast extends React.Component {
                 </div>
                 
                 <div className="text-muted">
+
+                    <button className="btn col-5 border-right border-dark mx-2" onClick={this.roastRoastr}><strong>{this.state.roastScore}</strong></button>
+                    <button className="btn col-5 border-left border-dark mx-2" onClick={this.roastRecipient}><strong>{this.state.replyScore}</strong></button>
+                    <p>Vote</p>
+
                     {this.state.voted === false? (
                         <div>
                         <button className="btn col-5 border-right border-dark mx-2"  onClick={this.voteRoastr}><strong>{this.state.roastScore}</strong></button>
@@ -166,8 +177,25 @@ class CompRoast extends React.Component {
                         </div>
                     )
                 }
-                    <p>Vote for the better roast</p>
+                    <p>Vote</p>
+</div>
+
+            <div className='accordion'>
+                <div className="card-header p-0" id="headingFour">
+                    <h5 className="mb-0">
+                    <button className="btn col-11 mb-4 btn-primary form-control collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Comments
+                    </button>
+                    </h5>
+
                 </div>
+                <div id="collapseFour" className="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div className="card-body">
+                    <Comments/>
+                    </div>
+                </div>
+            </div>
+
             </div>
             
         )

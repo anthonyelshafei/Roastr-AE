@@ -156,6 +156,7 @@ h1 {
 	text-shadow: 0px 0px 25px orange;
 	margin-bottom: 15px;
 	text-align: center;
+	font-weight: 300;
 }
 
 body {
@@ -436,11 +437,10 @@ table a:hover {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #f44d2f;
+	background: transparent;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: gold;
-	border-radius: 1px
+	background: transparent;
 }
