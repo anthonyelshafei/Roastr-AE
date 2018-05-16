@@ -99,23 +99,26 @@ class CompRoast extends React.Component {
         return ( 
             
             <div className="card text-center mb-3">
-                <div className="card-header row text-center justify-content-between">
-                    
-                    <div style={imgStyle} className="d-flex ml-auto mr-3">
+                <div className="card-header row text-center justify-content-center mx-auto">
+                <span class="badge badge-pill badge-warning mr-0 align-middle align-self-center">Score</span>
+
+                    <div style={imgStyle} className='ml-3'>
                         <Userimage
                         image={this.props.roastrImage}
                          />
                     </div>
                     
-                    <div className="d-flex my-auto">
+                    <div className="d-flex align-self-center mx-3">
                         {this.props.roastrName} VS {this.props.recipientName}
                     </div>
                     
-                    <div style={imgStyle} className="d-flex mr-auto ml-3">
+                    <div style={imgStyle} className='mr-3'>
                         <Userimage
                         image={this.props.recipientImage}
                          />
                     </div>
+                <span class="badge badge-pill badge-warning mr-0 align-middle align-self-center">Score</span>
+
 
                 </div>
                 
@@ -135,6 +138,35 @@ class CompRoast extends React.Component {
                     <button className="btn col-5 border-left border-dark mx-2" onClick={this.roastRecipient}><strong>{this.state.replyScore}</strong></button>
                     <p> Vote on who got roasted</p>
                 </div>
+
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+
+                            <button onClick={this.sendMessage} data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" className="btn btn-primary form-control"><img src="https://i.imgur.com/keUwOqg.png" heigt="16px"/></button>
+
+                        </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+
+
+                            !!!!!!!!!!!!!comment cards go here!!!!!!!!!!!!!!!
+                            !!!!!!!!!!!!!comment cards go here!!!!!!!!!!!!!!!
+                            !!!!!!!!!!!!!comment cards go here!!!!!!!!!!!!!!!
+                            !!!!!!!!!!!!!comment cards go here!!!!!!!!!!!!!!!
+                            !!!!!!!!!!!!!comment cards go here!!!!!!!!!!!!!!!
+                            
+
+
+
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             
         )
