@@ -143,7 +143,7 @@ class CompRoast extends React.Component {
             <div className='accordion'>
                 <div className="card-header p-0" id="headingFour">
                     <h5 className="mb-0">
-                    <button className="btn col-12 collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <button className="btn col-11 mb-4 btn-primary form-control collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         Comments
                     </button>
                     </h5>
